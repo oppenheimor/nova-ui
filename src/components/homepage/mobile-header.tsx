@@ -8,11 +8,11 @@ import { cn } from '@/lib/utils';
 
 export const MobileHeader = ({
   links,
-  icons,
+  // icons,
   Logo,
 }: {
   links: LinksList;
-  icons?: IconsList;
+  // icons?: IconsList;
   Logo: React.ReactNode;
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -23,7 +23,7 @@ export const MobileHeader = ({
         isOpen && 'min-h-screen z-40 dark:bg-zinc-950 bg-white fixed size-full',
       )}
     >
-      <div className="flex-row-between pb-2">
+      <div className="pb-2 flex-row-between">
         {Logo}
         <Button
           onClick={() => setIsOpen(!isOpen)}
@@ -38,7 +38,7 @@ export const MobileHeader = ({
         open={isOpen}
         className={
           isOpen
-            ? 'animate-popover-in size-full flex flex-col pt-5 gap-4 mb-5 dark:bg-zinc-950/10 backdrop-blur bg-white px-4'
+            ? 'flex flex-col gap-4 px-4 pt-5 mb-5 bg-white backdrop-blur animate-popover-in size-full dark:bg-zinc-950/10'
             : ''
         }
       >
@@ -47,16 +47,16 @@ export const MobileHeader = ({
             key={link.href}
             asChild
             variant={'outline'}
-            className="w-full rounded-xl justify-start"
+            className="justify-start w-full rounded-xl"
             size="lg"
           >
             <a href={link.href}>{link.label}</a>
           </Button>
         ))}
 
-        <div className="flex-row-end w-full gap-3 border-t pt-4 border-dashed">
+        {/* <div className="gap-3 pt-4 w-full border-t border-dashed flex-row-end">
           {icons && (
-            <div className="flex-row-center grow gap-5">
+            <div className="gap-5 flex-row-center grow">
               {icons.map((icon) => (
                 <Button
                   key={icon.name}
@@ -71,7 +71,7 @@ export const MobileHeader = ({
               ))}
             </div>
           )}
-        </div>
+        </div> */}
       </dialog>
     </div>
   );

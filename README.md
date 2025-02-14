@@ -1,10 +1,10 @@
-# Indie UI
+# Nova UI
 
-Indie UI is a free collection of UI components for building web applications. It is built with React and Tailwind CSS.
+Nova UI is a free collection of UI components for building web applications. It is built with React and Tailwind CSS.
 
 ## Getting Started
 
-Indie UI makes UI development easier by offering:
+Nova UI makes UI development easier by offering:
 
 - Customizable components
 - Dark mode support out of the box
@@ -17,7 +17,7 @@ Visit our [contributing guide](https://github.com/Ali-hussein-dev/indie-ui/blob/
 
 ## License
 
-Indie UI is licensed under the [MIT License](https://github.com/Ali-hussein-dev/indie-ui/blob/main/LICENSE.md).
+Nova UI is licensed under the [MIT License](https://github.com/Ali-hussein-dev/indie-ui/blob/main/LICENSE.md).
 
 ## Terms of Use
 

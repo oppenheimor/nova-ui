@@ -25,53 +25,53 @@ export const Hero = () => {
     <div>
       <Header />
       <div className="mx-auto max-w-4xl h-[85vh] lg:h-[90vh] center px-2">
-        <div className="animate-in mt-10 sm:mt-16">
-          <h1 className="text-4xl md:text-5xl text-center font-black text-balance lg:text-6xl h1 mb-4">
+        <div className="mt-10 animate-in sm:mt-16">
+          <h1 className="mb-4 text-4xl font-black text-center md:text-5xl text-balance lg:text-6xl h1">
             Rich Styled UI Components
           </h1>
-          <p className="text-center text-pretty text-lg mb-4 dark:text-zinc-400 mx-auto">
+          <p className="mx-auto mb-4 text-lg text-center text-pretty dark:text-zinc-400">
             Make your website stand out with minimal effort.
             <span className="block">
               Built with{' '}
-              <span className="dark:text-green-300 text-green-700 font-semibold">
+              <span className="font-semibold text-green-700 dark:text-green-300">
                 Reactjs
               </span>
               ,{' '}
-              <span className="dark:text-green-300 text-green-700 font-semibold">
+              <span className="font-semibold text-green-700 dark:text-green-300">
                 shadcn
               </span>{' '}
               and{' '}
-              <span className="dark:text-green-300 text-green-700 font-semibold">
+              <span className="font-semibold text-green-700 dark:text-green-300">
                 Framer Motion
               </span>{' '}
               for animation.
             </span>
           </p>
-          <div className="flex-row-center gap-4 mx-auto max-w-fit py-4">
+          <div className="gap-4 py-4 mx-auto flex-row-center max-w-fit">
             <Button asChild rightIcon={<FaArrowRight />}>
               <Link
                 href="/docs/changelog"
-                className="font-semibold w-fit mx-auto"
+                className="mx-auto font-semibold w-fit"
                 prefetch={false}
               >
                 What{"'"}s new
               </Link>
             </Button>
-            <Button asChild variant={'outline'} leftIcon={<FaGithub />}>
+            {/* <Button asChild variant={'outline'} leftIcon={<FaGithub />}>
               <a href={configs.urls.github} target="_blank">
                 GitHub
               </a>
-            </Button>
+            </Button> */}
           </div>
-          {/* <div className="mx-auto pt-10">
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
+          {/* <div className="pt-10 mx-auto">
+            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:gap-3">
               {Object.values(components).map((o, i) => (
                 <Button
                   key={o.id}
                   size="sm"
                   variant={'outline'}
                   asChild
-                  className={cn('sm:justify-start text-xs')}
+                  className={cn('text-xs sm:justify-start')}
                 >
                   <a href={`#${o.id}`}>{o.title}</a>
                 </Button>

@@ -49,14 +49,14 @@ const iconsList = [
   { name: 'x', href: configs.urls.x, icon: <FaXTwitter size="15" /> },
 ];
 const linksList = [
-  {
-    href: configs.urls.formBuilder,
-    label: 'FormFast',
-  },
-  {
-    href: configs.urls.indiestarter,
-    label: 'Indie Starter',
-  },
+  // {
+  //   href: configs.urls.formBuilder,
+  //   label: 'FormFast',
+  // },
+  // {
+  //   href: configs.urls.indiestarter,
+  //   label: 'Indie Starter',
+  // },
   { href: '/docs/changelog', label: 'Changelog' },
 ];
 
@@ -64,24 +64,24 @@ const linksList = [
 export const Header = ({
   Logo = <LogoLink />,
   links = linksList,
-  icons = iconsList,
+  // icons = iconsList,
   variant,
 }: HeaderProps) => {
   return (
     <header
       className={cn(
-        'w-full border-b dark:border-zinc-900 top-0 dark:bg-zinc-950/50 bg-white/70',
+        'top-0 w-full border-b dark:border-zinc-900 dark:bg-zinc-950/50 bg-white/70',
       )}
     >
       <div className={cn('hidden md:block', headerVariants({ variant }))}>
-        <div className="flex-row-start px-6 py-3 w-full gap-2">
+        <div className="gap-2 px-6 py-3 w-full flex-row-start">
           {Logo}
-          <nav className="grow flex-row-end gap-4">
+          <nav className="gap-4 grow flex-row-end">
             {links.map((link) => (
               <HeaderLink key={link.label} href={link.href} name={link.label} />
             ))}
-            {icons && (
-              <div className="flex-row-end gap-2 pl-3">
+            {/* {icons && (
+              <div className="gap-2 pl-3 flex-row-end">
                 {icons.map((link) => (
                   <Button
                     asChild
@@ -95,11 +95,11 @@ export const Header = ({
                 ))}
                 <ThemeToggle />
               </div>
-            )}
+            )} */}
           </nav>
         </div>
       </div>
-      <MobileHeader Logo={Logo} links={links} icons={icons} />
+      <MobileHeader Logo={Logo} links={links} />
     </header>
   );
 };

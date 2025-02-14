@@ -2,10 +2,10 @@ import { getPage, getPages } from '../../../app/source';
 import type { Metadata } from 'next';
 import { DocsPage, DocsBody } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
-import { CiEdit } from 'react-icons/ci';
-import { Button } from '@/components/ui/button';
-import { FaRegStar } from 'react-icons/fa';
-import { configs } from '@/configs';
+// import { CiEdit } from 'react-icons/ci';
+// import { Button } from '@/components/ui/button';
+// import { FaRegStar } from 'react-icons/fa';
+// import { configs } from '@/configs';
 
 export default async function Page({
   params,
@@ -25,9 +25,9 @@ export default async function Page({
       toc={page.data.exports.toc}
       tableOfContent={{
         footer: (
-          <div className="flex-col-start gap-2 dark:text-zinc-300">
-            <Button variant={'link'} asChild className="pl-1">
-              <span className="flex-row-start gap-2">
+          <div className="gap-2 flex-col-start dark:text-zinc-300">
+            {/* <Button variant={'link'} asChild className="pl-1">
+              <span className="gap-2 flex-row-start">
                 <CiEdit />
                 <a
                   href={`${configs.urls.github}/blob/main/content${page.url}.mdx`}
@@ -37,8 +37,8 @@ export default async function Page({
                   Edit this page
                 </a>
               </span>
-            </Button>
-            <Button asChild className="w-[88%]" variant="outline">
+            </Button> */}
+            {/* <Button asChild className="w-[88%]" variant="outline">
               <a href={configs.urls.github} data-attr-gh="gh-star">
                 <FaRegStar className="inline mr-2 size-4" />
                 Star us
@@ -52,7 +52,7 @@ export default async function Page({
               >
                 Contribute
               </a>
-            </Button>
+            </Button> */}
           </div>
         ),
       }}
