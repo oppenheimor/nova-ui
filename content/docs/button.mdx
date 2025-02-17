@@ -1,0 +1,67 @@
+---
+  title: Button
+  description: Displays a button or a component that looks like a button.
+---
+
+import { ButtonVariants } from '@/components/button/button-variants.tsx'
+import { ButtonSizes } from '@/components/button/button-sizes.tsx'
+import { ButtonDisabled } from '@/components/button/button-disabled.tsx'
+import { ButtonLoading } from '@/components/button/button-loading.tsx'
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { IoSend, IoArrowBack } from 'react-icons/io5';
+import { LuMoon } from 'react-icons/lu';
+import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
+import { ComponentPreview } from '@/components/component-preview';
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Button
+
+Displays a button or a component that looks like a button.
+
+
+## 按钮类型 
+
+<ComponentPreview filePathsKey="button_variants">
+  <ButtonVariants />
+</ComponentPreview>
+
+## 按钮尺寸
+
+<ComponentPreview filePathsKey="button_sizes">
+  <ButtonSizes />
+</ComponentPreview>
+
+
+## 禁用按钮
+
+<ComponentPreview filePathsKey="button_disabled">
+  <ButtonDisabled />
+</ComponentPreview>
+
+## 加载中...
+
+<ComponentPreview filePathsKey="button_loading">
+  <ButtonLoading />
+</ComponentPreview>
+
+## Props
+
+<TypeTable
+  type={{
+    variants: {
+      type: 'string',
+      description: '按钮类型，可选值为 `primary`、`default`、`secondary`、`text`、`link`',
+      default: 'default',
+    },
+    size: {
+      type: 'string',
+      description: '按钮尺寸，可选值为 `lg`、`base`、`sm`、`xs`',
+      default: 'base'
+    },
+    disabled: {
+      type: 'boolean',
+      description: '是否禁用按钮',
+      default: false
+    }
+  }}
+/>
