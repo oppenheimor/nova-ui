@@ -7,6 +7,10 @@ import { cn } from '@/lib/utils';
 import { configs } from '@/configs';
 import { FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
 import { LogoLink } from '@/components/logo';
+import { getEnvConfig } from '../../../configs/env/index.mjs';
+
+const envConfig = getEnvConfig();
+
 
 const headerVariants = cva('mx-auto', {
   variants: {
@@ -56,7 +60,7 @@ const linksList = [
   //   href: configs.urls.indiestarter,
   //   label: 'Indie Starter',
   // },
-  { href: '/docs/changelog', label: 'Changelog' },
+  { href: `${envConfig.SERVER.BASE_PATH}/docs/changelog`, label: 'Changelog' },
 ];
 
 //======================================

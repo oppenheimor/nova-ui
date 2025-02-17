@@ -6,6 +6,10 @@ import { configs } from '@/configs';
 import { FaArrowRight, FaGithub } from 'react-icons/fa';
 // import components from '@/constants/components.json';
 // import { cn } from '@/lib/utils';
+import { getEnvConfig } from '../../../configs/env/index.mjs';
+
+const envConfig = getEnvConfig();
+
 
 const ProductHunt = () => (
   <a href="https://www.producthunt.com/posts/indie-ui" target="_blank">
@@ -50,7 +54,7 @@ export const Hero = () => {
           <div className="gap-4 py-4 mx-auto flex-row-center max-w-fit">
             <Button asChild>
               <Link
-                href="/docs/changelog"
+                href={`${envConfig.SERVER.BASE_PATH}/docs/changelog`}
                 className="mx-auto font-semibold w-fit"
                 prefetch={false}
               >

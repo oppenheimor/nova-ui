@@ -1,4 +1,4 @@
-const Site_Name = 'Indie UI';
+const Site_Name = 'Nova UI';
 
 const siteUrl = 'https://ui.indie-starter.dev';
 
