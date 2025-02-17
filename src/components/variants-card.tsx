@@ -15,16 +15,16 @@ export const VariantsCard = ({
 }) => (
   <section
     id={id}
-    className="border px-2 sm:px-4 md:px-8 pb-6 pt-3 border-dashed rounded-lg shadow bg-white dark:bg-black"
+    className="px-2 pt-3 pb-6 bg-white rounded-lg border border-dashed shadow sm:px-4 md:px-8 dark:bg-black"
   >
-    <div className="flex-row-between mb-4 gap-1 border-b border-dashed py-1">
+    <div className="gap-1 py-1 mb-4 border-b border-dashed flex-row-between">
       <h3 className="text-xl font-bold text-start">{title}</h3>
-      <Button asChild variant="ghost" size="sm" rightIcon={<FaChevronRight />}>
+      <Button asChild size="sm">
         <Link href={docUrl} prefetch={false}>
           Get code
         </Link>
       </Button>
     </div>
-    <div className="w-full pt-4">{children}</div>
+    <div className="pt-4 w-full">{children}</div>
   </section>
 );

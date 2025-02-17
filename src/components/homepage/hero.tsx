@@ -48,7 +48,7 @@ export const Hero = () => {
             </span>
           </p>
           <div className="gap-4 py-4 mx-auto flex-row-center max-w-fit">
-            <Button asChild rightIcon={<FaArrowRight />}>
+            <Button asChild>
               <Link
                 href="/docs/changelog"
                 className="mx-auto font-semibold w-fit"

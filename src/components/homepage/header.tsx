@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 import { configs } from '@/configs';
 import { FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
 import { LogoLink } from '@/components/logo';
-import { Button_v7 } from '@/components/buttons/button-v7';
 
 const headerVariants = cva('mx-auto', {
   variants: {
@@ -34,9 +33,9 @@ export interface HeaderProps extends VariantProps<typeof headerVariants> {
 
 const HeaderLink = (props: { href: string; name: string }) => {
   return (
-    <Button_v7 asChild size="sm" variant="link" className="px-0">
+    <Button asChild size="sm" variant="link" className="px-0">
       <a href={props.href}>{props.name}</a>
-    </Button_v7>
+    </Button>
   );
 };
 const iconsList = [

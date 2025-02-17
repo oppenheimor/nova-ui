@@ -77,27 +77,24 @@ export default function HomePage() {
   return (
     <main className="min-h-screen text-center">
       <Hero />
-      <div className="flex-col justify-center flex overflow-hidden">
-        <div className="mx-auto space-y-8 max-w-6xl pb-10 px-2">
+      {/* <div className="flex overflow-hidden flex-col justify-center">
+        <div className="px-2 pb-10 mx-auto space-y-8 max-w-6xl">
           <VariantsCard
             id={components.button.id}
             title={components.button.title}
             docUrl={components.button.docUrl}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-3 md:gap-6 max-w-2xl gap-y-3">
+            <div className="grid grid-cols-1 gap-y-3 max-w-2xl sm:grid-cols-2 md:grid-cols-3 sm:gap-3 md:gap-6">
               <Button_v1>Click me</Button_v1>
               <Button_v2>Hover me</Button_v2>
               <Button_v3>Hover me</Button_v3>
               <Button_v4>Hover me</Button_v4>
               <Button_v5 Icon={<IoSend />}>Hover me</Button_v5>
               <Button_v6>Hover me</Button_v6>
-              <Button rightIcon={<LuArrowRight />} variant="outline">
+              <Button>
                 <span>Hover me</span>
               </Button>
-              <Button leftIcon={<LuArrowLeft />} variant="outline">
-                <span>Hover me</span>
-              </Button>
-              <Button_v7 className="w-fit mx-auto">Hover me</Button_v7>
+              <Button_v7 className="mx-auto w-fit">Hover me</Button_v7>
             </div>
           </VariantsCard>
           <VariantsCard
@@ -105,7 +102,7 @@ export default function HomePage() {
             title={components.eyeCatchingButton.title}
             docUrl={components.eyeCatchingButton.docUrl}
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 max-w-2xl">
+            <div className="grid grid-cols-2 gap-3 max-w-2xl md:grid-cols-3 sm:gap-6">
               <EyeCatchingButton_v1 className="w-full">
                 Shimmer effect
               </EyeCatchingButton_v1>
@@ -118,7 +115,7 @@ export default function HomePage() {
             title={components.statefulButton.title}
             docUrl={components.statefulButton.docUrl}
           >
-            <div className="mx-auto flex-row-center gap-3">
+            <div className="gap-3 mx-auto flex-row-center">
               <StatefulButton_1 />
               <StatefulButton_2 />
             </div>
@@ -151,7 +148,7 @@ export default function HomePage() {
             title={components.simpleCards.title}
             docUrl={components.simpleCards.docUrl}
           >
-            <div className="max-w-2xl space-y-10 md:space-y-12 pt-4 mx-auto">
+            <div className="pt-4 mx-auto space-y-10 max-w-2xl md:space-y-12">
               <SimpleCard_V1 />
               <SimpleCard_V2 />
               <SimpleCard_V3 />
@@ -166,7 +163,7 @@ export default function HomePage() {
             title={components.cardsWithMultiLayers.title}
             docUrl={components.cardsWithMultiLayers.docUrl}
           >
-            <div className="max-w-xl mx-auto space-y-4">
+            <div className="mx-auto space-y-4 max-w-xl">
               <MultilayerCardV_1 />
               <MultilayerCardV_2 />
               <MultilayerCardV_3 />
@@ -178,7 +175,7 @@ export default function HomePage() {
             title={components.cardsWithImageBg.title}
             docUrl={components.cardsWithImageBg.docUrl}
           >
-            <div className="max-w-2xl grid md:grid-cols-2 gap-y-8 md:gap-y-20 gap-4">
+            <div className="grid gap-4 gap-y-8 max-w-2xl md:grid-cols-2 md:gap-y-20">
               <Card_with_image_v1 />
               <Card_with_image_v2 />
               <Card_with_image_v3 />
@@ -193,7 +190,7 @@ export default function HomePage() {
             title={components.cardsWithPattern.title}
             docUrl={components.cardsWithPattern.docUrl}
           >
-            <div className="grid gap-4 gap-y-8 max-w-2xl mx-auto md:grid-cols-2">
+            <div className="grid gap-4 gap-y-8 mx-auto max-w-2xl md:grid-cols-2">
               {CardsWithPattern.map((Card, i) => (
                 <Card key={i}>
                   <CardBody />
@@ -206,7 +203,7 @@ export default function HomePage() {
             title={components.cardsInteractive.title}
             docUrl={components.cardsInteractive.docUrl}
           >
-            <div className="max-w-2xl mx-auto">
+            <div className="mx-auto max-w-2xl">
               <ExpandableCard height="6rem">
                 <p className="text-sm/relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -228,7 +225,7 @@ export default function HomePage() {
             title={components.loadersDots.title}
             docUrl={components.loadersDots.docUrl}
           >
-            <div className="max-w-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-8 md:gap-y-4 pl-8 mb-8">
+            <div className="grid grid-cols-2 gap-4 gap-y-8 pl-8 mx-auto mb-8 max-w-2xl md:grid-cols-4 md:gap-y-4">
               <div className="mx-auto -translate-x-9 md:translate-x-0 md:mx-0">
                 <Dots_v1 />
               </div>
@@ -242,7 +239,7 @@ export default function HomePage() {
             title={components.loadersText.title}
             docUrl={components.loadersText.docUrl}
           >
-            <div className="flex-row-center py-1 w-full">
+            <div className="py-1 w-full flex-row-center">
               <TextLoader
                 messages={[
                   'Preparing your experience',
@@ -259,7 +256,7 @@ export default function HomePage() {
             title={components.separator.title}
             docUrl={components.separator.docUrl}
           >
-            <div className="flex-col-center gap-12 pt-4">
+            <div className="gap-12 pt-4 flex-col-center">
               <Separator gradient />
               <Separator />
               <Separator
@@ -269,7 +266,7 @@ export default function HomePage() {
               <Separator label={<span className="px-2">Section</span>} />
               <Separator
                 label={
-                  <div className="border px-4 py-1 rounded-full border-dashed">
+                  <div className="px-4 py-1 rounded-full border border-dashed">
                     Section
                   </div>
                 }
@@ -277,12 +274,12 @@ export default function HomePage() {
               />
               <Separator
                 label={
-                  <div className="border px-4 py-1 rounded-full">Section</div>
+                  <div className="px-4 py-1 rounded-full border">Section</div>
                 }
               />
               <Separator
                 label={
-                  <div className="border px-12 py-2 rounded-full">
+                  <div className="px-12 py-2 rounded-full border">
                     <FaPlus />
                   </div>
                 }
@@ -293,8 +290,8 @@ export default function HomePage() {
           <TextAnimationVariants />
           <BentoVariants />
         </div>
-      </div>
-      <Footer />
+      </div> */}
+      {/* <Footer /> */}
     </main>
   );
 }
