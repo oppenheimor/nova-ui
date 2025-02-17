@@ -47,32 +47,32 @@ export default function FormBuilderLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex-col-center w-full min-h-screen">
+    <div className="w-full min-h-screen flex-col-center">
       <Header />
-      <div className="h-full grow w-full px-2 pb-3 pt-10 container">
-        <div className="border border-dashed mb-5 md:grid-cols-8 grid mx-auto">
+      <div className="container px-2 pt-10 pb-3 w-full h-full grow">
+        <div className="grid mx-auto mb-5 border border-dashed md:grid-cols-8">
           <div className="md:col-span-1" />
-          <div className="md:col-span-6 md:border-x border-dashed py-5 px-3 grow sm:py-6 md:py-8 md:px-6 w-full">
-            <h1 className="text-2xl md:text-3xl text-center text-pretty font-bold mb-2">
+          <div className="px-3 py-5 w-full border-dashed md:col-span-6 md:border-x grow sm:py-6 md:py-8 md:px-6">
+            <h1 className="mb-2 text-2xl font-bold text-center md:text-3xl text-pretty">
               Build Forms In{' '}
               <span className="line-through decoration-red-600">Hours</span>{' '}
               Minutes{' '}
             </h1>
-            <p className="text-muted-foreground text-center text-pretty">
+            <p className="text-center text-muted-foreground text-pretty">
               Build as many forms as you want for free using
             </p>
-            <div className="flex-row-center gap-3 flex-wrap pt-2 text-muted-foreground">
+            <div className="flex-wrap gap-3 pt-2 flex-row-center text-muted-foreground">
               <span>React</span>
               <span>Tailwindcss</span>
               <span>Shadcn</span>
               <span>Zod</span>
               <span>React Hook Form</span>
             </div>
-            <div className="mx-auto pt-4 w-fit">
-              <Button asChild variant={'outline'}>
+            <div className="pt-4 mx-auto w-fit">
+              <Button asChild variant={'default'}>
                 <a
                   href={configs.urls.github}
-                  className="rounded-full mx-auto px-5 block"
+                  className="block px-5 mx-auto rounded-full"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

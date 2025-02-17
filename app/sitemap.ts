@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'docs/cards-with-image-bg',
     'docs/cards-with-pattern',
 
-    'docs/base-button',
+    'docs/button',
     'docs/buttons',
     'docs/eye-catching-buttons',
     'docs/stateful-buttons',

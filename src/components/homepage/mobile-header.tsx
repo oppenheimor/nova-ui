@@ -27,9 +27,7 @@ export const MobileHeader = ({
         {Logo}
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          size="icon"
           className="rounded-xl"
-          variant={'outline'}
         >
           {isOpen ? <CgClose /> : <CgMenu />}
         </Button>
@@ -46,7 +44,6 @@ export const MobileHeader = ({
           <Button
             key={link.href}
             asChild
-            variant={'outline'}
             className="justify-start w-full rounded-xl"
             size="lg"
           >

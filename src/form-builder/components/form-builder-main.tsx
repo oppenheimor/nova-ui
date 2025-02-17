@@ -40,11 +40,11 @@ export function FormBuilderMain() {
   const setIsMS = useFormBuilderStore((s) => s.setIsMS);
   return (
     <>
-      <div className="w-full grid md:grid-cols-12 gap-3 lg:gap-5 py-6 pt-10">
+      <div className="grid gap-3 py-6 pt-10 w-full md:grid-cols-12 lg:gap-5">
         <CommandProvider>
           <FormElementSelector />
         </CommandProvider>
-        <div className="px-4 sm:px-0 w-full md:col-span-6 min-w-full grow ">
+        <div className="px-4 w-full min-w-full sm:px-0 md:col-span-6 grow">
           <Tabs defaultValue={tabsList[0].name} className="">
             <TabsList className="w-full">
               {tabsList.map((tab) => (
@@ -57,7 +57,6 @@ export function FormBuilderMain() {
               <div className="pb-4 flex-row-between">
                 <Button
                   size="sm"
-                  variant="outline"
                   className="rounded-lg"
                   onClick={() => setIsMS(!isMS)}
                 >
@@ -66,7 +65,6 @@ export function FormBuilderMain() {
                 {formElements.length > 1 && (
                   <Button
                     size="sm"
-                    variant="ghost"
                     onClick={resetForm}
                     className="rounded-lg"
                   >
@@ -87,35 +85,35 @@ export function FormBuilderMain() {
             </TabsContent>
           </Tabs>
         </div>
-        <div className="md:col-span-4 w-full">
+        <div className="w-full md:col-span-4">
           <FormPreview form={form} />
         </div>
       </div>
-      <div className="flex-row-center gap-4 flex-wrap max-w-container mx-auto border-t px-2 py-6 border-dashed">
-        <Button variant={'outline'}>
+      <div className="flex-wrap gap-4 px-2 py-6 mx-auto border-t border-dashed flex-row-center max-w-container">
+        <Button>
           <a
             href={'https://github.com/Ali-Hussein-dev/indie-ui/discussions'}
-            className="flex-row-center gap-2"
+            className="gap-2 flex-row-center"
             target="_blank"
             rel="noopener noreferrer"
           >
             Request Feature <FaRegLightbulb />
           </a>
         </Button>
-        <Button variant={'outline'}>
+        <Button>
           <a
             href={'https://github.com/Ali-Hussein-dev/indie-ui/issues/new'}
-            className="flex-row-center gap-2"
+            className="gap-2 flex-row-center"
             target="_blank"
             rel="noopener noreferrer"
           >
             Report bug <VscBug />
           </a>
         </Button>
-        <Button variant={'outline'}>
+        <Button>
           <a
             href={'https://github.com/Ali-Hussein-dev/indie-ui/discussions/54'}
-            className="flex-row-center gap-2"
+            className="gap-2 flex-row-center"
             target="_blank"
             rel="noopener noreferrer"
           >

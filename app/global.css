@@ -30,7 +30,7 @@
   }
 
   .h1 {
-    @apply dark:h1-dark h1-light bg-clip-text text-transparent;
+    @apply dark:h1-dark h1-light bg-clip-text;
   }
 }
 .animate-in {
@@ -83,9 +83,171 @@
 
     --dembossed-top-left-shadow: rgba(82, 82, 91, 0.15);
     --dembossed-bottom-right-shadow: rgb(113, 113, 122);
+
+    /* 品牌主色常态 */
+    --atom-color-brand-primary: #165DFF;
+    /* 品牌主色-黑色 */
+    --atom-color-brand-primary-black: 0 0% 0%;
+    /* 美股涨幅-上涨 */
+    --atom-color-price-up: #009B67;
+    /* 美股涨幅-下跌 */
+    --atom-color-price-down: #FF381A;
+    /* 美股涨幅-平、停牌 */
+    --atom-color-price-even: #000;
+
+    /* 成功 */
+    --atom-color-status-success: #009B67;
+    /* 失败、危险 */
+    --atom-color-status-error: #FF381A;
+    /* 警示 */
+    --atom-color-status-warning: #FFAA00;
+    /* 消息、通知 */
+    --atom-color-status-info: #165DFF;
+
+    /* 一级文本色 */
+    --atom-color-text-primary: #000;
+    /* 二级文本色 */
+    --atom-color-text-secondary: rgba(0, 0, 0, 0.6);
+    /* 三级文本色 */
+    --atom-color-text-tertiary: rgba(0, 0, 0, 0.4);
+    /* 四级文本色 */
+    --atom-color-text-quaternary: rgba(0, 0, 0, 0.2);
+    /* 彩底白字、反色 */
+    --atom-color-text-inverse: #FFF;
+    /* 文字链接 */
+    --atom-color-text-link: #165DFF;
+    /* 无处不在文字链 */
+    --atom-color-text-aime: #165DFF;
+
+    /* 页面一级背景色，最底层背景 */
+    --atom-color-background-layer1: #F2F2F2;
+    /* 页面一级前景色，大卡等模块背景 */
+    --atom-color-foreground-layer1: #FFF;
+    /* 页面一级前景色，模块内卡片等背景 */
+    --atom-color-foreground-layer1_2: #F2F2F2;
+    /* 页面一级前景色，模块内卡片等背景 */
+    --atom-color-foreground-layer1_3: #FFFFFF;
+    /* 页面二级背景色，浮层最底层背景 */
+    --atom-color-background-layer2: #F2F2F2;
+    /* 页面二级前景色，大卡等模块背景 */
+    --atom-color-foreground-layer2: #FFF;
+    /* 页面三级背景色，弹窗等最底层背景 */
+    --atom-color-background-layer3: #FFF;
+    /* 页面四级背景色，下拉菜单气泡底层背景 */
+    --atom-color-background-layer4: #FFFFFF;
+    /* 页面五级背景色，基础黑白色背景 */
+    --atom-color-background-layer5: #FFFFFF;
+
+    /* 一级-新功能气泡引导 */
+    --atom-color-background-mask-level1: rgba(0, 0, 0, 0.8);
+    /* 二级常用弹窗 */
+    --atom-color-background-mask-level2: rgba(0, 0, 0, 0.6);
+    /* 三级下拉菜单遮罩 */
+    --atom-color-background-mask-level3: rgba(0, 0, 0, 0.2);
+    /* 输入框背景色等浅底灰色 */
+    --atom-color-background-weak: rgba(0, 0, 0, 0.05);
+    /* 导航栏背景色 */
+    --atom-color-background-nav: #FFF;
+    /* 一级分割线 */
+    --atom-color-divider-level1: rgba(0, 0, 0, 0.2);
+    /* 二级分割线 */
+    --atom-color-divider-level2: rgba(0, 0, 0, 0.1);
+    /* 标签按钮描边颜色 */
+    --atom-color-border-bt: rgba(0, 0, 0, 0.2);
+
+    /* 基础灰阶95 */
+    --atom-color-grey-95: #F2F2F2;
+    /* 基础灰阶90 */
+    --atom-color-grey-90: #E6E6E6;
+    /* 基础灰阶80 */
+    --atom-color-grey-80: #CCC;
+    /* 基础灰阶70 */
+    --atom-color-grey-70: #B3B3B3;
+    /* 基础灰阶60 */
+    --atom-color-grey-60: #999;
+    /* 基础灰阶50 */
+    --atom-color-grey-50: #808080;
+    /* 基础灰阶40 */
+    --atom-color-grey-40: #666;
+    /* 基础灰阶20 */
+    --atom-color-grey-20: #333;
+
+    /* 品牌辅助色常态 */
+    --atom-color-blue: #165DFF;
+    /* 品牌辅助色常态 */
+    --atom-color-green: #009B67;
+    /* 品牌辅助色常态 */
+    --atom-color-red: #FF381A;
+    /* 品牌辅助色常态 */
+    --atom-color-orange: #FF6600;
+    /* 品牌辅助色常态 */
+    --atom-color-yellow: #FFAA00;
+    /* 品牌辅助色常态 */
+    --atom-color-cyan: #00CCC3;
+    /* 品牌辅助色常态 */
+    --atom-color-acidblue: #1A9FFF;
+    /* 品牌辅助色常态 */
+    --atom-color-indigo: #4433FF;
+    /* 品牌辅助色常态 */
+    --atom-color-purple: #B341D9;
+    /* 品牌辅助色常态 */
+    --atom-color-gold: #CCA670;
+
+    /* 标签背景色 */
+    --atom-color-transparent-blue: rgba(22, 93, 255, 0.1);
+    /* Aime解读卡片背景色 */
+    --atom-color-transparent-blue1: rgba(22, 93, 255, 0.15);
+    /* 标签背景色 */
+    --atom-color-transparent-green: rgba(0, 155, 103, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-red: rgba(255, 56, 26, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-orange: rgba(255, 102, 0, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-yellow: rgba(255, 170, 0, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-cyan: rgba(0, 204, 195, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-acidblue: rgba(26, 159, 255, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-indigo: rgba(68, 51, 255, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-purple: rgba(179, 65, 217, 0.1);
+    /* 标签背景色 */
+    --atom-color-transparent-gold: rgba(204, 166, 112, 0.1);
+
+    /* 可视化色-折柱默认色 */
+    --atom-color-visualization-primary: #265FFC;
+    /* 可视化色 */
+    --atom-color-visialization-01: #38D1FF;
+    /* 可视化色 */
+    --atom-color-visialization-02: #F564B9;
+    /* 可视化色 */
+    --atom-color-visialization-03: #733ED6;
+    /* 可视化色 */
+    --atom-color-visialization-04: #00CCC3;
+    /* 可视化色 */
+    --atom-color-visialization-05: #273D8F;
+    /* 可视化色 */
+    --atom-color-visialization-06: #FF7040;
+    /* 可视化色 */
+    --atom-color-visialization-07: #9EA9C7;
+    /* 可视化色 */
+    --atom-color-visialization-08: #808080;
+    /* 平，中性色  */
+    --atom-color-visialization-09: rgba(0, 0, 0, 0.6);
+    /* 可视化网格线 */
+    --atom-color-visualization-divider: rgba(0, 0, 0, 0.1);
+    /* 看板-背景 */
+    --atom-color-visualization-tooltip: #EBEBEB;
+
+    /* 交互反馈 - hover */
+    --atom-color-interaction-hover: rgba(0, 0, 0, 0.05);
+    /* 交互反馈 - click */
+    --atom-color-interaction-click: rgba(0, 0, 0, 0.1);
   }
 
-  .dark {
+  :root.dark, :root[theme-mode='dark'], :root[theme-mode="dark"], html.dark, html[theme-mode="black"], html[theme-mode="dark"] {
     /* Shadcn variables */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -117,6 +279,163 @@
 
     --dembossed-top-left-shadow: rgba(64, 64, 64, 0.25);
     --dembossed-bottom-right-shadow: rgb(0, 0, 0);
+
+    /* 品牌主色常态 */
+    --atom-color-brand-primary: #3371FF;
+    /* 品牌主色-黑色 */
+    --atom-color-brand-primary-black: 0 0% 100%;
+    /* 美股涨幅-上涨 */
+    --atom-color-price-up: #00A36D;
+    /* 美股涨幅-下跌 */
+    --atom-color-price-down: #FF4A2E;
+    /* 美股涨幅-平、停牌 */
+    --atom-color-price-even: #FFF;
+
+    /* 成功 */
+    --atom-color-status-success: #00A36D;
+    /* 失败、危险 */
+    --atom-color-status-error: #FF4A2E;
+    /* 警示 */
+    --atom-color-status-warning: #FFB114;
+    /* 消息、通知 */
+    --atom-color-status-info: #3371FF;
+
+    /* 一级文本色 */
+    --atom-color-text-primary: #FFF;
+    /* 二级文本色 */
+    --atom-color-text-secondary: rgba(255, 255, 255, 0.6);
+    /* 三级文本色 */
+    --atom-color-text-tertiary: rgba(255, 255, 255, 0.4);
+    /* 四级文本色 */
+    --atom-color-text-quaternary: rgba(255, 255, 255, 0.2);
+    /* 文字链接 */
+    --atom-color-text-link: #3371FF;
+    /* 无处不在文字链 */
+    --atom-color-text-aime: #8BAEFF;
+
+
+    /* 页面一级背景色，最底层背景 */
+    --atom-color-background-layer1: #000;
+    /* 页面一级前景色，大卡等模块背景 */
+    --atom-color-foreground-layer1: #171717;
+    /* 页面一级前景色，模块内卡片等背景 */
+    --atom-color-foreground-layer1_2: #292929;
+    /* 页面一级前景色，模块内卡片等背景 */
+    --atom-color-foreground-layer1_3: #383838;
+    /* 页面二级背景色，浮层最底层背景 */
+    --atom-color-background-layer2: #000;
+    /* 页面二级前景色，大卡等模块背景 */
+    --atom-color-foreground-layer2: #171717;
+    /* 页面三级背景色，弹窗等最底层背景 */
+    --atom-color-background-layer3: #171717;
+    /* 页面四级背景色，下拉菜单气泡底层背景 */
+    --atom-color-background-layer4: #292929;
+    /* 页面五级背景色，基础黑白色背景 */
+    --atom-color-background-layer5: #000000;
+
+    /* 输入框背景色等浅底灰色 */
+    --atom-color-background-weak: rgba(255, 255, 255, 0.2);
+    /* 导航栏背景色 */
+    --atom-color-background-nav: #171717;
+    /* 一级分割线 */
+    --atom-color-divider-level1: rgba(255, 255, 255, 0.22);
+    /* 二级分割线 */
+    --atom-color-divider-level2: rgba(255, 255, 255, 0.12);
+    /* 标签按钮描边颜色 */
+    --atom-color-border-bt: rgba(255, 255, 255, 0.22);
+
+    /* 基础灰阶95 */
+    --atom-color-grey-95: #171717;
+    /* 基础灰阶90 */
+    --atom-color-grey-90: #292929;
+    /* 基础灰阶80 */
+    --atom-color-grey-80: #383838;
+    /* 基础灰阶70 */
+    --atom-color-grey-70: #474747;
+    /* 基础灰阶60 */
+    --atom-color-grey-60: #575757;
+    /* 基础灰阶50 */
+    --atom-color-grey-50: #666;
+    /* 基础灰阶40 */
+    --atom-color-grey-40: #757575;
+    /* 基础灰阶20 */
+    --atom-color-grey-20: #ccc;
+
+
+    /* 品牌辅助色常态 */
+    --atom-color-blue: #3371FF;
+    /* 品牌辅助色常态 */
+    --atom-color-green: #00A36D;
+    /* 品牌辅助色常态 */
+    --atom-color-red: #FF4A2E;
+    /* 品牌辅助色常态 */
+    --atom-color-orange: #FF7214;
+    /* 品牌辅助色常态 */
+    --atom-color-yellow: #FFB114;
+    /* 品牌辅助色常态 */
+    --atom-color-cyan: #00D9CF;
+    /* 品牌辅助色常态 */
+    --atom-color-acidblue: #2EA7FF;
+    /* 品牌辅助色常态 */
+    --atom-color-indigo: #5B4DFF;
+    /* 品牌辅助色常态 */
+    --atom-color-purple: #B752D9;
+    /* 品牌辅助色常态 */
+    --atom-color-gold: #D9B077;
+
+    /* 标签背景色 */
+    --atom-color-transparent-blue: rgba(51, 113, 255, 0.2);
+    /* Aime解读卡片背景色 */
+    --atom-color-transparent-blue1: rgba(51, 113, 255, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-green: rgba(0, 163, 109, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-red: rgba(255, 74, 46, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-orange: rgba(255, 114, 20, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-yellow: rgba(255, 177, 20, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-cyan: rgba(0, 217, 207, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-acidblue: rgba(46, 167, 255, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-indigo: rgba(91, 77, 255, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-purple: rgba(183, 82, 217, 0.2);
+    /* 标签背景色 */
+    --atom-color-transparent-gold: rgba(217, 176, 119, 0.2);
+
+    /* 可视化色 */
+    --atom-color-visialization-08: #666;
+    /* 平，中性色  */
+    --atom-color-visialization-09: rgba(255, 255, 255, 0.6);
+    /* 可视化网格线 */
+    --atom-color-visualization-divider: rgba(255, 255, 255, 0.12);
+    /* 看板-背景 */
+    --atom-color-visualization-tooltip: #383838;
+
+    /* Hover */
+    --atom-color-interaction-hover: rgba(255, 255, 255, 0.2);
+    /* click */
+    --atom-color-interaction-click: rgba(255, 255, 255, 0.25);
+  }
+
+  /* 深色模式 红涨绿跌 */
+  :root[stock-color-mode="reverse"].dark, :root[theme-mode="black"][stock-color-mode="reverse"], :root[theme-mode="dark"][stock-color-mode="reverse"],
+  html[stock-color-mode="reverse"].dark, html[theme-mode="black"][stock-color-mode="reverse"], html[theme-mode="dark"][stock-color-mode="reverse"] {
+    /* 美股涨幅-上涨 */
+    --atom-color-price-up: #FF4A2E;
+    /* 美股涨幅-下跌 */
+    --atom-color-price-down: #00A36D;
+  }
+
+  /* 浅色模式 红涨绿跌 */
+  :root[stock-color-mode="reverse"], html[stock-color-mode="reverse"] {
+    /* 美股涨幅-上涨 */
+    --atom-color-price-up: #FF381A;
+    /* 美股涨幅-下跌 */
+    --atom-color-price-down: #009B67;
   }
 }
 

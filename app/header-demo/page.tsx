@@ -13,43 +13,43 @@ const HeaderDemoPage = () => {
     <div className="relative">
       <HeaderDemo variant={variant} sticky={isSticky} />
       <section className="h-screen">
-        <div className="flex-row-center py-10 gap-10">
+        <div className="gap-10 py-10 flex-row-center">
           <Button
             onClick={() => setVariant('default')}
-            variant={variant == 'default' ? 'default' : 'outline'}
+            variant="default"
           >
             default
           </Button>
           <Button
             onClick={() => setVariant('centered')}
-            variant={variant == 'centered' ? 'default' : 'outline'}
+            variant="default"
           >
             centered
           </Button>
           <Button
             onClick={() => setIsSticky(!isSticky)}
-            variant={isSticky ? 'default' : 'outline'}
+            variant="default"
           >
             {isSticky ? 'unstick' : 'stick'}
           </Button>
         </div>
-        <p className="text-center pb-8">
+        <p className="pb-8 text-center">
           Resize the window to see the mobile version
         </p>
       </section>
       <section
         id="features"
-        className="h-screen mx-auto flex-row-center border-t"
+        className="mx-auto h-screen border-t flex-row-center"
       >
         Features
       </section>
       <section
         id="pricing"
-        className="h-screen mx-auto flex-row-center border-t"
+        className="mx-auto h-screen border-t flex-row-center"
       >
         pricing
       </section>
-      <section id="faqs" className="h-screen mx-auto flex-row-center border-t">
+      <section id="faqs" className="mx-auto h-screen border-t flex-row-center">
         FAQs
       </section>
     </div>

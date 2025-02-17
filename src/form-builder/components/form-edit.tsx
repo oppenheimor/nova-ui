@@ -46,8 +46,8 @@ const EditFormItem = (props: EditFormItemProps) => {
 
   return (
     <div className="w-full group">
-      <div className="flex-row-between px-2">
-        <div className="flex-row-start gap-2 size-full">
+      <div className="px-2 flex-row-between">
+        <div className="gap-2 flex-row-start size-full">
           {isNested ? (
             <span className="w-1" />
           ) : (
@@ -55,7 +55,7 @@ const EditFormItem = (props: EditFormItemProps) => {
           )}
           {DisplayName}
         </div>
-        <div className="flex-row-end opacity-0 group-hover:opacity-100 duration-100">
+        <div className="opacity-0 duration-100 flex-row-end group-hover:opacity-100">
           {element.fieldType !== 'Separator' && (
             <FieldCustomizationView
               formElement={element as FormElement}
@@ -65,8 +65,6 @@ const EditFormItem = (props: EditFormItemProps) => {
             />
           )}
           <Button
-            size="icon"
-            variant="ghost"
             onClick={() => {
               dropElement({
                 fieldIndex,
@@ -74,7 +72,7 @@ const EditFormItem = (props: EditFormItemProps) => {
                 stepIndex: props?.stepIndex,
               });
             }}
-            className="rounded-xl h-9"
+            className="h-9 rounded-xl"
           >
             <MdDelete />
           </Button>
@@ -93,7 +91,7 @@ const EditFormItem = (props: EditFormItemProps) => {
 const NoStepsPlaceholder = () => {
   const { addFormStep } = useFormBuilderStore();
   return (
-    <div className="flex-col-center gap-4 text-muted-foreground">
+    <div className="gap-4 flex-col-center text-muted-foreground">
       <Button size="sm" onClick={() => addFormStep(0)}>
         Add first Step
       </Button>
@@ -118,7 +116,7 @@ export function FormEdit() {
         return <NoStepsPlaceholder />;
       }
       return (
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4">
           {(formElements as FormStep[]).map((step, stepIndex) => {
             return (
               <div key={step.id}>
@@ -139,7 +137,7 @@ export function FormEdit() {
                             <Reorder.Item
                               value={element}
                               key={element.map((f) => f.name).join('-')}
-                              className="flex items-center justify-start gap-2 "
+                              className="flex gap-2 justify-start items-center"
                               variants={animateVariants}
                               initial="initial"
                               animate="animate"
@@ -153,12 +151,11 @@ export function FormEdit() {
                                     stepIndex,
                                   });
                                 }}
-                                variant="ghost"
                                 className="center shrink h-full py-4 border border-dashed rounded-xl bg-background px-3.5"
                               >
                                 <IoIosSwap className="dark:text-muted-foreground text-muted-foreground" />
                               </Button>
-                              <div className="flex items-center justify-start grow flex-wrap sm:flex-nowrap w-full gap-2">
+                              <div className="flex flex-wrap gap-2 justify-start items-center w-full grow sm:flex-nowrap">
                                 {element.map((el, j) => (
                                   <div
                                     key={el.name + j}
@@ -225,7 +222,7 @@ export function FormEdit() {
                     animate="animate"
                     exit="exit"
                   >
-                    <div className="flex items-center justify-start gap-2 ">
+                    <div className="flex gap-2 justify-start items-center">
                       <Button
                         onClick={() => {
                           reorder({
@@ -233,12 +230,11 @@ export function FormEdit() {
                             fieldIndex: i,
                           });
                         }}
-                        variant="ghost"
                         className="center shrink h-full py-4 border border-dashed rounded-xl bg-background px-3.5"
                       >
                         <IoIosSwap className="dark:text-muted-foreground text-muted-foreground" />
                       </Button>
-                      <div className="flex items-center justify-start grow flex-wrap sm:flex-nowrap w-full gap-3">
+                      <div className="flex flex-wrap gap-3 justify-start items-center w-full grow sm:flex-nowrap">
                         {element.map((el, j) => (
                           <div
                             key={el.name + j}

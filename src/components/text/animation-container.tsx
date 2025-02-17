@@ -17,13 +17,11 @@ export const AnimationContainer = ({
     setKey((prv) => prv + 1);
   };
   return (
-    <div className={cn('pb-12 pt-4 border-b dark:border-zinc-900', className)}>
-      <div className="flex-row-end w-full mb-2">
+    <div className={cn('pt-4 pb-12 border-b dark:border-zinc-900', className)}>
+      <div className="mb-2 w-full flex-row-end">
         <Button
           onClick={onClick}
-          size="icon"
           className="rounded-lg size-9"
-          variant="outline"
         >
           <FaPlay className="size-3" />
         </Button>

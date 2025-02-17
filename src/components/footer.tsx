@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button';
 export const Footer = () => {
   return (
     <footer className="h-16">
-      <div className="border-t max-w-container w-full mx-auto flex-row-end pt-4 px-2 gap-3">
+      <div className="gap-3 px-2 pt-4 mx-auto w-full border-t max-w-container flex-row-end">
         <LogoLink />
-        <Button asChild variant="ghost" size="sm">
+        <Button asChild variant="text" size="sm">
           <a
             href={configs.urls.newsletter}
             target="_blank"
@@ -19,7 +19,7 @@ export const Footer = () => {
             Subscribe
           </a>
         </Button>
-        <div className="flex flex-1 flex-row items-center gap-2 md:gap-3 justify-end">
+        <div className="flex flex-row flex-1 gap-2 justify-end items-center md:gap-3">
           <a href={configs.urls.x} target="_blank" rel="noopener noreferrer">
             <FaXTwitter />
           </a>

@@ -35,7 +35,7 @@ export function MultiStepViewer({
   } = form;
   return (
     <div className="flex flex-col gap-2 pt-3">
-      <div className="flex-col-start gap-1">
+      <div className="gap-1 flex-col-start">
         <span className="">
           Step {currentStep} of {steps.length}
         </span>
@@ -55,7 +55,7 @@ export function MultiStepViewer({
               return (
                 <div
                   key={i}
-                  className="flex items-center justify-between flex-wrap sm:flex-nowrap w-full gap-2"
+                  className="flex flex-wrap gap-2 justify-between items-center w-full sm:flex-nowrap"
                 >
                   {field.map((el: FormElement, ii: number) => (
                     <div key={el.name + ii} className="w-full">
@@ -73,8 +73,8 @@ export function MultiStepViewer({
           })}
         </motion.div>
       </AnimatePresence>
-      <div className="flex-row-between gap-3 w-full pt-3">
-        <Button size="sm" variant="ghost" onClick={goToPrevious} type="button">
+      <div className="gap-3 pt-3 w-full flex-row-between">
+        <Button size="sm" onClick={goToPrevious} type="button">
           Previous
         </Button>
         {isLastStep ? (

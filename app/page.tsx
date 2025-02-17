@@ -1,78 +1,78 @@
-import { Button } from '@/components/ui/button';
-import { Button_v1 } from '@/components/buttons/button-v1';
-import { Button_v2 } from '@/components/buttons/button-v2';
-import { Button_v3 } from '@/components/buttons/button-v3';
-import { Button_v4 } from '@/components/buttons/button-v4';
-import { Button_v5 } from '@/components/buttons/button-v5';
-import { Button_v6 } from '@/components/buttons/button-v6';
-import { Button_v7 } from '@/components/buttons/button-v7';
-import { EyeCatchingButton_v1 } from '@/components/buttons/eye-catching-button-v1';
-import { EyeCatchingButton_v2 } from '@/components/buttons/eye-catching-button-v2';
-import { EyeCatchingButton_v3 } from '@/components/buttons/eye-catching-button-v3';
-import {
-  SimpleCard_V1,
-  SimpleCard_V2,
-  SimpleCard_V3,
-  SimpleCard_V4,
-  SimpleCard_V5,
-  SimpleCard_V6,
-  SimpleCard_V7,
-} from '@/components/cards/simple-cards';
-import {
-  MultilayerCardV_1,
-  MultilayerCardV_2,
-  MultilayerCardV_3,
-  MultilayerCardV_4,
-} from '@/components/cards/multi-layers';
+// import { Button } from '@/components/ui/button';
+// import { Button_v1 } from '@/components/buttons/button-v1';
+// import { Button_v2 } from '@/components/buttons/button-v2';
+// import { Button_v3 } from '@/components/buttons/button-v3';
+// import { Button_v4 } from '@/components/buttons/button-v4';
+// import { Button_v5 } from '@/components/buttons/button-v5';
+// import { Button_v6 } from '@/components/buttons/button-v6';
+// import { Button_v7 } from '@/components/buttons/button-v7';
+// import { EyeCatchingButton_v1 } from '@/components/buttons/eye-catching-button-v1';
+// import { EyeCatchingButton_v2 } from '@/components/buttons/eye-catching-button-v2';
+// import { EyeCatchingButton_v3 } from '@/components/buttons/eye-catching-button-v3';
+// import {
+//   SimpleCard_V1,
+//   SimpleCard_V2,
+//   SimpleCard_V3,
+//   SimpleCard_V4,
+//   SimpleCard_V5,
+//   SimpleCard_V6,
+//   SimpleCard_V7,
+// } from '@/components/cards/simple-cards';
+// import {
+//   MultilayerCardV_1,
+//   MultilayerCardV_2,
+//   MultilayerCardV_3,
+//   MultilayerCardV_4,
+// } from '@/components/cards/multi-layers';
 
-import {
-  Card_with_image_v1,
-  Card_with_image_v2,
-  Card_with_image_v3,
-  Card_with_image_v4,
-  Card_with_image_v5,
-  Card_with_image_v6,
-} from '@/components/cards/with-image-bg';
-import { Input, InputBlock } from '@/components/inputs/input';
-import { Footer } from '@/components/footer';
-import { Newsletter } from '@/components/newsletter';
-import { LuArrowLeft, LuArrowRight } from 'react-icons/lu';
-import { IoSend } from 'react-icons/io5';
+// import {
+//   Card_with_image_v1,
+//   Card_with_image_v2,
+//   Card_with_image_v3,
+//   Card_with_image_v4,
+//   Card_with_image_v5,
+//   Card_with_image_v6,
+// } from '@/components/cards/with-image-bg';
+// import { Input, InputBlock } from '@/components/inputs/input';
+// import { Footer } from '@/components/footer';
+// import { Newsletter } from '@/components/newsletter';
+// import { LuArrowLeft, LuArrowRight } from 'react-icons/lu';
+// import { IoSend } from 'react-icons/io5';
 import { Hero } from '@/components/homepage/hero';
-import components from '@/constants/components.json';
-import { VariantsCard } from '@/components/variants-card';
-import { TextAnimationVariants } from '@/components/text/text-animation-variants';
-import { Separator } from '@/components/separators/separator';
-import { FaPlus } from 'react-icons/fa6';
-import {
-  CardBody,
-  CardWithCircleEllipsis,
-  CardWithEllipsis,
-  CardWithGrid,
-  CardWithGridEllipsis,
-  CardWithLines,
-  CardWithNoise,
-  CardWithPlus,
-  CardWithSquareX,
-} from '@/components/cards/with-pattern';
-import { BentoVariants } from '@/components/layout/bento-variants';
-import { Dots_v1, Dots_v2, Dots_v3, Dots_v4 } from '@/components/loaders/dots';
+// import components from '@/constants/components.json';
+// import { VariantsCard } from '@/components/variants-card';
+// import { TextAnimationVariants } from '@/components/text/text-animation-variants';
+// import { Separator } from '@/components/separators/separator';
+// import { FaPlus } from 'react-icons/fa6';
+// import {
+//   CardBody,
+//   CardWithCircleEllipsis,
+//   CardWithEllipsis,
+//   CardWithGrid,
+//   CardWithGridEllipsis,
+//   CardWithLines,
+//   CardWithNoise,
+//   CardWithPlus,
+//   CardWithSquareX,
+// } from '@/components/cards/with-pattern';
+// import { BentoVariants } from '@/components/layout/bento-variants';
+// import { Dots_v1, Dots_v2, Dots_v3, Dots_v4 } from '@/components/loaders/dots';
 import * as React from 'react';
-import { StatefulButton_1 } from '@/components/buttons/stateful/variant-1';
-import { StatefulButton_2 } from '@/components/buttons/stateful/variant-2';
-import { ExpandableCard } from '@/components/cards/expandable-card';
-import { TextLoader } from '@/components/loaders/text-loader';
+// import { StatefulButton_1 } from '@/components/buttons/stateful/variant-1';
+// import { StatefulButton_2 } from '@/components/buttons/stateful/variant-2';
+// import { ExpandableCard } from '@/components/cards/expandable-card';
+// import { TextLoader } from '@/components/loaders/text-loader';
 
-const CardsWithPattern = [
-  CardWithEllipsis,
-  CardWithGridEllipsis,
-  CardWithCircleEllipsis,
-  CardWithLines,
-  CardWithPlus,
-  CardWithSquareX,
-  CardWithGrid,
-  CardWithNoise,
-];
+// const CardsWithPattern = [
+//   CardWithEllipsis,
+//   CardWithGridEllipsis,
+//   CardWithCircleEllipsis,
+//   CardWithLines,
+//   CardWithPlus,
+//   CardWithSquareX,
+//   CardWithGrid,
+//   CardWithNoise,
+// ];
 export default function HomePage() {
   return (
     <main className="min-h-screen text-center">

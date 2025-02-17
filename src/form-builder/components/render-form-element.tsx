@@ -176,7 +176,7 @@ export const RenderFormElement = ({
           control={form.control}
           name={formElement.name}
           render={({ field }: { field: ControllerRenderProps }) => (
-            <FormItem className="flex items-center gap-2 w-full py-1 space-y-0">
+            <FormItem className="flex gap-2 items-center py-1 space-y-0 w-full">
               <FormControl>
                 <Checkbox
                   {...field}
@@ -203,7 +203,7 @@ export const RenderFormElement = ({
           control={form.control}
           name={formElement.name}
           render={({ field }: { field: ControllerRenderProps }) => (
-            <FormItem className="flex flex-col gap-2 w-full py-1">
+            <FormItem className="flex flex-col gap-2 py-1 w-full">
               <FormLabel className="mt-0">
                 {formElement?.label} {formElement.required && ' *'}
               </FormLabel>
@@ -213,7 +213,7 @@ export const RenderFormElement = ({
                   defaultValue={field.value}
                 >
                   {formElement.options.map(({ label, value }) => (
-                    <div key={value} className="flex items-center gap-x-2">
+                    <div key={value} className="flex gap-x-2 items-center">
                       <RadioGroupItem value={value} id={value} />
                       <Label htmlFor={value}>{label}</Label>
                     </div>
@@ -233,7 +233,7 @@ export const RenderFormElement = ({
         <ToggleGroupItem
           value={value}
           key={value}
-          className="flex items-center gap-x-2"
+          className="flex gap-x-2 items-center"
         >
           {label}
         </ToggleGroupItem>
@@ -243,7 +243,7 @@ export const RenderFormElement = ({
           control={form.control}
           name={formElement.name}
           render={({ field }: { field: ControllerRenderProps }) => (
-            <FormItem className="flex flex-col gap-2 w-full py-1">
+            <FormItem className="flex flex-col gap-2 py-1 w-full">
               <FormLabel className="mt-0">
                 {formElement?.label} {formElement.required && '*'}
               </FormLabel>
@@ -255,7 +255,7 @@ export const RenderFormElement = ({
                     variant="outline"
                     onValueChange={field.onChange}
                     defaultValue={formElement.defaultValue}
-                    className="flex justify-start items-center gap-2"
+                    className="flex gap-2 justify-start items-center"
                   >
                     {options}
                   </ToggleGroup>
@@ -274,7 +274,7 @@ export const RenderFormElement = ({
                             (val) => val !== undefined,
                           )
                     }
-                    className="flex justify-start items-center gap-2"
+                    className="flex gap-2 justify-start items-center"
                   >
                     {options}
                   </ToggleGroup>
@@ -295,8 +295,8 @@ export const RenderFormElement = ({
           control={form.control}
           name={formElement.name}
           render={({ field }: { field: ControllerRenderProps }) => (
-            <FormItem className="flex flex-col p-3 justify-center w-full border rounded">
-              <div className="flex items-center justify-between h-full">
+            <FormItem className="flex flex-col justify-center p-3 w-full rounded border">
+              <div className="flex justify-between items-center h-full">
                 <FormLabel className="w-full grow">
                   {formElement.label}
                 </FormLabel>
@@ -445,7 +445,6 @@ export const RenderFormElement = ({
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
-                        variant={'outline'}
                         className={cn(
                           'w-full justify-start text-start font-normal',
                           !date && 'text-muted-foreground',
@@ -456,7 +455,7 @@ export const RenderFormElement = ({
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
+                  <PopoverContent className="p-0 w-auto" align="start">
                     <Calendar
                       mode="single"
                       selected={field.value}
@@ -488,16 +487,16 @@ export const RenderFormElement = ({
         </h1>
       );
     case 'H2':
-      return <h2 className="mt-4 font-bold text-xl">{formElement.content}</h2>;
+      return <h2 className="mt-4 text-xl font-bold">{formElement.content}</h2>;
     case 'H3':
       return (
-        <h3 className="mt-3 font-semiboldbold text-lg">
+        <h3 className="mt-3 text-lg font-semiboldbold">
           {formElement.content} content
         </h3>
       );
     case 'P':
       return (
-        <p className="tracking-wider text-foreground/60 pt-0 dark:text-foreground/60 mb-4 mt-0 text-wrap">
+        <p className="pt-0 mt-0 mb-4 tracking-wider text-foreground/60 dark:text-foreground/60 text-wrap">
           {formElement.content}
         </p>
       );

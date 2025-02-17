@@ -106,7 +106,7 @@ export const getFormElementCode = (field: FormElement) => {
           control={form.control}
           name="${field.name}"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+            <FormItem className="flex flex-row items-start p-4 space-x-3 space-y-0 rounded-md border">
               <FormControl>
                 <Checkbox
                   checked={field.value}
@@ -134,7 +134,6 @@ export const getFormElementCode = (field: FormElement) => {
             <PopoverTrigger asChild>
               <FormControl>
                 <Button
-                  variant={"outline"}
                   className={cn(
                     "w-[240px] pl-3 text-start font-normal",
                     !field.value && "text-muted-foreground"
@@ -145,11 +144,11 @@ export const getFormElementCode = (field: FormElement) => {
                   ) : (
                     <span>Pick a date</span>
                   )}
-                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                  <CalendarIcon className="ml-auto w-4 h-4 opacity-50" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
+            <PopoverContent className="p-0 w-auto" align="start">
               <Calendar
                 mode="single"
                 selected={field.value}
@@ -264,8 +263,8 @@ export const getFormElementCode = (field: FormElement) => {
               control={form.control}
               name="${field.name}"
               render={({ field }) => (
-                <FormItem className="flex flex-col p-3 justify-center w-full border rounded">
-                    <div className="flex items-center justify-between h-full">
+                <FormItem className="flex flex-col justify-center p-3 w-full rounded border">
+                    <div className="flex justify-between items-center h-full">
                       ${field.label && `<FormLabel>${field.label}</FormLabel> ${field.required ? '*' : ''}`}
                       <FormControl>
                         <Switch
@@ -289,7 +288,7 @@ export const getFormElementCode = (field: FormElement) => {
                   { value: 'option-3', label: 'Option 3' },
                 ]
               return (
-                <FormItem className="flex flex-col gap-2 w-full py-1">
+                <FormItem className="flex flex-col gap-2 py-1 w-full">
                     ${field.label && `<FormLabel>${field.label}</FormLabel> ${field.required ? '*' : ''}`}
                     <FormControl>
                       <RadioGroup
@@ -300,7 +299,7 @@ export const getFormElementCode = (field: FormElement) => {
                           <RadioGroupItem
                           key={value}
                           value={value}
-                          className="flex items-center gap-x-2"
+                          className="flex gap-x-2 items-center"
                         >
                           {label}
                         </RadioGroupItem>
@@ -327,7 +326,7 @@ export const getFormElementCode = (field: FormElement) => {
                      { value: 'sunday', label: 'Sun' },
                   ]   
             return (
-              <FormItem className="flex flex-col gap-2 w-full py-1">
+              <FormItem className="flex flex-col gap-2 py-1 w-full">
                 ${field.label && `<FormLabel>${field.label}</FormLabel> ${field.required ? '*' : ''}`}
                 <FormControl>
                   <ToggleGroup
@@ -335,13 +334,13 @@ export const getFormElementCode = (field: FormElement) => {
                       onValueChange={field.onChange}
                       defaultValue={field.defaultValue}
                       type='${field.type}'
-                      className="flex justify-start items-center gap-2 flex-wrap"
+                      className="flex flex-wrap gap-2 justify-start items-center"
                     >
                      {options.map(({ label, value }) => (
                         <ToggleGroupItem
                           key={value}
                           value={value}
-                          className="flex items-center gap-x-2"
+                          className="flex gap-x-2 items-center"
                         >
                           {label}
                         </ToggleGroupItem>))

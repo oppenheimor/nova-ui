@@ -81,8 +81,8 @@ function FormElementOptions({
               />
             </div>
           ) : (
-            <div className="flex-col-start w-full gap-3 mb-2">
-              <div className="flex-row-between gap-2 w-full">
+            <div className="gap-3 mb-2 w-full flex-col-start">
+              <div className="gap-2 w-full flex-row-between">
                 <RenderFormElement
                   formElement={{
                     name: 'name',
@@ -104,7 +104,7 @@ function FormElementOptions({
                   form={form}
                 />
               </div>
-              <div className="flex-row-between gap-2 w-full">
+              <div className="gap-2 w-full flex-row-between">
                 <RenderFormElement
                   formElement={{
                     name: 'label',
@@ -139,7 +139,7 @@ function FormElementOptions({
                 form={form}
               />
               {formElement.fieldType === 'Slider' && (
-                <div className="flex-row-between gap-3">
+                <div className="gap-3 flex-row-between">
                   <RenderFormElement
                     formElement={{
                       name: 'min',
@@ -192,7 +192,7 @@ function FormElementOptions({
                   form={form}
                 />
               )}
-              <div className="flex-row-start gap-4 pl-1">
+              <div className="gap-4 pl-1 flex-row-start">
                 <RenderFormElement
                   formElement={{
                     name: 'required',
@@ -213,8 +213,8 @@ function FormElementOptions({
             </div>
           )}
         </div>
-        <div className="flex-row-end gap-3 w-full">
-          <Button size="sm" variant="ghost" onClick={close} type="button">
+        <div className="gap-3 w-full flex-row-end">
+          <Button size="sm" variant="default" onClick={close} type="button">
             Cancel
           </Button>
           <Button size="sm" type="submit" variant="secondary">
@@ -256,9 +256,7 @@ export function FieldCustomizationView({
         <DialogTrigger asChild>
           <Button
             type="button"
-            variant="ghost"
-            size="icon"
-            className="rounded-xl h-9"
+            className="h-9 rounded-xl"
           >
             <FaEdit />
           </Button>
@@ -278,9 +276,7 @@ export function FieldCustomizationView({
       <DrawerTrigger asChild>
         <Button
           type="button"
-          variant="ghost"
-          size="icon"
-          className="rounded-xl h-9"
+          className="h-9 rounded-xl"
         >
           <FaEdit />
         </Button>

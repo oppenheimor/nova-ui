@@ -18,24 +18,22 @@ export function StepContainer({
   return (
     <motion.div
       key={stepIndex}
-      className="rounded-lg px-3 md:px-4 md:py-5 py-4 border-dashed border bg-secondary/40"
+      className="px-3 py-4 rounded-lg border border-dashed md:px-4 md:py-5 bg-secondary/40"
       initial={{ opacity: 0, y: -15 }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.2, delay: 0.05 } }}
       exit={{ opacity: 0, y: -15, transition: { duration: 0.3 } }}
     >
-      <div className="flex-row-start mb-3">
+      <div className="mb-3 flex-row-start">
         <FormElementsStepDropdown stepIndex={stepIndex} />
       </div>
       <div className="space-y-3">{children}</div>
-      <div className="flex-row-between px-2 pt-4">
-        <div className="py-1 text-muted-foreground center font-medium">
+      <div className="px-2 pt-4 flex-row-between">
+        <div className="py-1 font-medium text-muted-foreground center">
           Step {stepIndex + 1}
         </div>
-        <div className="flex-row-end gap-3">
+        <div className="gap-3 flex-row-end">
           <Button
             onClick={() => removeFormStep(stepIndex)}
-            variant="ghost"
-            size="icon"
             className="rounded-lg"
             type="button"
           >
@@ -43,8 +41,6 @@ export function StepContainer({
           </Button>
           <Button
             type="button"
-            variant="outline"
-            size="icon"
             className="rounded-lg"
             onClick={() => addFormStep(stepIndex)}
           >

@@ -20,8 +20,8 @@ export function TemplatesSelect() {
     <div className="pb-2">
       <DropdownMenu>
         <DropdownMenuTrigger asChild tabIndex={-1} className="w-full">
-          <Button variant={'outline'}>
-            <div className="flex-row-center gap-2">
+          <Button>
+            <div className="gap-2 flex-row-center">
               Templates
               <ChevronDown className="size-4" />
             </div>

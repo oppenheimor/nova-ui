@@ -51,23 +51,20 @@ export const HeaderDemo = ({
           <Button
             key={link.href}
             asChild
-            variant={'outline'}
-            className="w-full rounded-xl justify-center"
+            className="justify-center w-full rounded-xl"
             size="lg"
             onClick={() => setIsOpen(false)}
           >
             <Link href={link.href}>{link.name}</Link>
           </Button>
         ))}
-        <div className="flex-row-end w-full gap-3 border-t pt-4 border-dashed">
+        <div className="gap-3 pt-4 w-full border-t border-dashed flex-row-end">
           {icons && (
-            <div className="flex-row-center grow gap-2">
+            <div className="gap-2 flex-row-center grow">
               {icons.map((icon) => (
                 <Button
                   key={icon.name}
-                  size="icon"
                   className="rounded-full"
-                  variant={'outline'}
                   asChild
                   onClick={() => setIsOpen(false)}
                 >

@@ -27,13 +27,11 @@ export const MobileHeader = ({
         isOpen && 'min-h-screen z-40 dark:bg-zinc-950 bg-zinc-50 size-full',
       )}
     >
-      <div className="flex-row-between pb-2">
+      <div className="pb-2 flex-row-between">
         {Logo}
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          size="icon"
           className="rounded-xl"
-          variant={'outline'}
         >
           {isOpen ? <CgClose /> : <CgMenu />}
         </Button>
@@ -43,7 +41,7 @@ export const MobileHeader = ({
         open={isOpen}
         className={
           isOpen
-            ? 'animate-popover-in flex flex-col gap-3 h-full w-full pt-4 px-4 bg-inherit'
+            ? 'flex flex-col gap-3 px-4 pt-4 w-full h-full animate-popover-in bg-inherit'
             : 'hidden'
         }
       >

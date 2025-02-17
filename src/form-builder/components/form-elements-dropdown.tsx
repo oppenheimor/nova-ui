@@ -28,13 +28,13 @@ export function FormElementsDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="rounded-xl h-9">
+        <Button className="h-9 rounded-xl">
           <FaPlus />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         data-align="end" // not working
-        className="space-y-3 max-h-64 overflow-y-scroll"
+        className="overflow-y-scroll space-y-3 max-h-64"
       >
         {formElementsList.map((o) => (
           <DropdownMenuItem
@@ -70,8 +70,8 @@ export function FormElementsStepDropdown({
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className={'rounded-xl h-9'}>
-          <div className="flex-row-start gap-2">
+        <Button className={'h-9 rounded-xl'}>
+          <div className="gap-2 flex-row-start">
             <FaPlus />
             Add Element
           </div>
@@ -79,7 +79,7 @@ export function FormElementsStepDropdown({
       </DropdownMenuTrigger>
       <DropdownMenuContent
         data-align="end" // not working
-        className="space-y-3 max-h-64 overflow-y-scroll"
+        className="overflow-y-scroll space-y-3 max-h-64"
       >
         {formElementsList.map((o) => (
           <DropdownMenuItem

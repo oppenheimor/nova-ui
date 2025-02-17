@@ -3,7 +3,7 @@ import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 // import { Poppins } from 'next/font/google';
 import type { ReactNode } from 'react';
-import { Banner } from '@/components/banner';
+// import { Banner } from '@/components/banner';
 import { AnalyticsProv } from '@/analytics-prov';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Scripts />
       </head>
       <body className="relative selection:bg-zinc-800 selection:text-zinc-100">
-        <Banner />
+        {/* <Banner /> */}
         <RootProvider>
           <AnalyticsProv>{children}</AnalyticsProv>
         </RootProvider>

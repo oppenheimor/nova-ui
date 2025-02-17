@@ -35,11 +35,11 @@ export function ExpandableCard({
   return (
     <div
       className={cn(
-        'bg-white dark:bg-zinc-950 dark:from-zinc-950 from-white w-full border px-4 pt-8 pb-3 rounded-lg shadow',
+        'px-4 pt-8 pb-3 w-full bg-white from-white rounded-lg border shadow dark:bg-zinc-950 dark:from-zinc-950',
         className,
       )}
     >
-      <div className="relative overflow-hidden bg-inherit dark:bg-inherit">
+      <div className="overflow-hidden relative bg-inherit dark:bg-inherit">
         <div
           ref={contentRef}
           id="expandable-content"
@@ -57,12 +57,11 @@ export function ExpandableCard({
           className={cn(
             'mx-auto bg-inherit dark:bg-inherit',
             wide ? 'w-full' : 'w-fit',
-            isExpanded ? 'pt-2' : 'absolute bottom-4 inset-x-0',
+            isExpanded ? 'pt-2' : 'absolute inset-x-0 bottom-4',
           )}
         >
           <Button
-            variant="outline"
-            className="w-full bg-inherit dark:bg-inherit rounded-lg"
+            className="w-full rounded-lg bg-inherit dark:bg-inherit"
             onClick={() => setIsExpanded(!isExpanded)}
             aria-expanded={isExpanded}
             aria-controls="expandable-content"
