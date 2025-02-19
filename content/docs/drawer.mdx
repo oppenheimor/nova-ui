@@ -1,6 +1,5 @@
 ---
   title: Drawer
-  description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 ---
 
 import { DrawerBase } from '@/components/drawer/drawer-base.tsx'
@@ -11,13 +10,233 @@ import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
 import { ComponentPreview } from '@/components/component-preview';
 import { TypeTable } from 'fumadocs-ui/components/type-table';
 
-## Drawer
+## 定义
 
-A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+弹窗是一种模态窗口，在弹窗消失之前，用户无法操作其他界面内容，干扰性比较强。通常用来展示用户当前需要的或用户必须关注的信息或操作，其他情况不建议使用弹窗，可考虑通知等其他非模态窗口。  
+  
+弹窗的内容通常是不同控件进行组合布局。例如文本(可带格式，如缩进、链接、粗体等)、列表、输入框、网格、图标或图片。常用于选择或确认信息。
 
+`Drawer` 组件主要在移动端使用。
 
-## 基础用法 
+## 组件示例
+
+### 基础用法
 
 <ComponentPreview filePathsKey="drawer_base">
-  <DrawerBase />
+  <div className='flex justify-center items-center'>
+    <DrawerBase />
+  </div>
 </ComponentPreview>
+
+## API 参考文档
+
+### Root
+ 
+抽屉根组件，控制全局功能。
+
+<TypeTable
+  type={{
+    defaultOpen: {
+      type: 'boolean',
+      description: '初始渲染时抽屉的打开状态。用于不需要控制其打开状态的情况。',
+      default: '',
+    },
+    open: {
+      type: 'boolean',
+      description: '抽屉的受控打开状态。必须与 `onOpenChange` 一起使用',
+      default: ''
+    },
+    onOpenChange: {
+      type: 'function',
+      description: '抽屉的打开状态改变时调用的事件处理器。',
+      typeDescription: '(open: boolean) => void',
+      default: ''
+    },
+    modal: {
+      type: 'boolean',
+      description: '抽屉的模态性。当设置为 `true` 时，外部元素的交互将被禁用，只有对话框内容对屏幕阅读器可见。',
+      default: 'true'
+    },
+    container: {
+      type: 'HTMLElement',
+      description: '指定一个容器元素，将抽屉传送到其中。',
+      default: 'document.body'
+    },
+    direction: {
+      type: 'directionType',
+      description: '抽屉的方向。这会调整动画和拖拽的方向。',
+      typeDescription: '"top" | "right" | "bottom" | "left"',
+      default: 'bottom'
+    },
+    onAnimationEnd: {
+      type: 'function',
+      description: '在打开或关闭动画结束后触发，它接收一个 `open` 参数，该参数是抽屉在触发函数时的打开状态。',
+      typeDescription: '(open: boolean) => void',
+      default: ''
+    },
+    dismissible: {
+      type: 'boolean',
+      description: '当设置为 `false` 时，拖动、在外部点击、按 esc 等操作将不会关闭抽屉。与 `open` 属性一起使用，否则无法打开/关闭抽屉。',
+      default: 'true'
+    },
+    handleOnly: {
+      type: 'boolean',
+      description: '当设置为 `true` 时，只能通过手柄拖动。',
+      default: 'false'
+    },
+    repositionInputs: {
+      type: 'boolean',
+      description: '当设置为 `true` 时，将重新定位输入框，而不是在键盘遮挡时滚动它们到视图中。将其设置为 `false` 将回退到默认的浏览器行为。',
+      default: 'true'
+    }
+  }}
+/>
+
+snap points 相关的属性。  
+  
+snap points 是抽屉组件中用于定义多个预设停靠位置的特性。当用户拖动抽屉时，组件会自动吸附到最近的预设位置点，常用于实现多级展开效果。
+
+
+<TypeTable
+  type={{
+    snapPoints: {
+      type: 'array',
+      description: '一个数组，包含 0 到 1 之间的数字，表示给定 snap point 在屏幕上应占据的百分比。你也可以使用像素值，这样不考虑屏幕高度。',
+      typeDescription: 'Array<number | string>',
+      default: '',
+    },
+    activeSnapPoint: {
+      type: 'boolean',
+      description: '受控的 snap point 状态。',
+      default: ''
+    },
+    setActiveSnapPoint: {
+      type: 'function',
+      description: 'snap point 状态改变时调用的事件处理器。',
+      typeDescription: '(open: boolean) => void',
+      default: ''
+    },
+    fadeFromIndex: {
+      type: 'number',
+      description: '从哪个 snap point 开始应用遮罩渐变。默认为最后一个 snap point。',
+      default: ''
+    },
+    snapToSequentialPoint: {
+      type: 'boolean',
+      description: '禁用基于速度的 snap point 滑动。这意味着，即使速度足够高，也不会跳过 snap pointt。如果抽屉中的每个 snap point 都同样重要，这将非常有用。',
+      default: ''
+    }
+  }}
+/>
+
+### Trigger
+
+打开抽屉的触发器。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Portal
+
+当使用时，将你的遮罩和内容部分传送到 `body` 中。无属性。
+
+### Overlay
+
+遮罩层。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: '',
+    },
+  }}
+/>
+
+### Content
+
+包含所有在抽屉中渲染的内容。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: '',
+    },
+  }}
+/>
+
+### Header
+
+抽屉头部。
+
+<TypeTable
+  type={{
+    showCloseIcon: {
+      type: 'boolean',
+      description: '展示关闭按扭',
+      default: 'true',
+    },
+    onCloseIconClick: {
+      type: 'function',
+      description: '点击关闭按扭时触发',
+      typeDescription: '(event: React.MouseEvent) => void',
+      default: ''
+    }
+  }}
+/>
+
+### Close
+
+关闭抽屉的按扭。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Title
+
+抽屉标题。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Description
+
+抽屉描述信息。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Handle
+
+一个可选的拖拽抽屉的句柄。无属性。

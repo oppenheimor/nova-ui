@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
+import { X } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -18,7 +19,29 @@ const DrawerTrigger = DrawerPrimitive.Trigger;
 
 const DrawerPortal = DrawerPrimitive.Portal;
 
-const DrawerClose = DrawerPrimitive.Close;
+const DrawerClose = React.forwardRef<
+  React.ElementRef<typeof DrawerPrimitive.Close>,
+  React.ComponentPropsWithRef<typeof DrawerPrimitive.Close> & {
+    onCloseIconClick?: (event: React.MouseEvent) => void;
+  }
+>(({ className, onCloseIconClick, ...props }, ref) => (
+  <DrawerPrimitive.Close
+    ref={ref}
+    className={cn(
+      'w-12 h-[64px] flex justify-center items-center rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground',
+      className,
+    )}
+    {...props}
+    onClick={(event: React.MouseEvent) => onCloseIconClick?.(event)}
+  >
+    <>
+      <X className="w-5 h-5" />
+      <span className="sr-only">Close</span>
+    </>
+  </DrawerPrimitive.Close>
+));
+
+DrawerClose.displayName = DrawerPrimitive.Close.displayName;
 
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
@@ -41,7 +64,7 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background',
+        'flex fixed inset-x-0 bottom-0 z-50 flex-col mt-24 h-auto border rounded-t-[20px] bg-background',
         className,
       )}
       {...props}
@@ -55,12 +78,25 @@ DrawerContent.displayName = 'DrawerContent';
 
 const DrawerHeader = ({
   className,
+  children,
+  showCloseIcon = true,
+  onCloseIconClick,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+}: React.HTMLAttributes<HTMLDivElement> & {
+  showCloseIcon?: boolean;
+  onCloseIconClick?: (event: React.MouseEvent) => void;
+}) => (
   <div
-    className={cn('grid gap-1.5 p-4 text-center sm:text-start', className)}
+    className={cn(
+      'grid gap-1.5 h-16 justify-between items-center text-center grid-cols-3',
+      className,
+    )}
     {...props}
-  />
+  >
+    <div className='justify-self-start' />
+    {children}
+    { showCloseIcon && <DrawerClose className="justify-self-end" onCloseIconClick={onCloseIconClick} /> }
+  </div>
 );
 DrawerHeader.displayName = 'DrawerHeader';
 
@@ -69,7 +105,7 @@ const DrawerFooter = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn('mt-auto flex flex-col gap-2 p-4', className)}
+    className={cn('flex flex-col gap-2 px-4 py-3 mt-auto', className)}
     {...props}
   />
 );
@@ -82,7 +118,7 @@ const DrawerTitle = React.forwardRef<
   <DrawerPrimitive.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibold leading-none tracking-tight',
+      'text-xl font-semibold tracking-tight leading-none',
       className,
     )}
     {...props}

@@ -1,10 +1,8 @@
 ---
   title: Credenza
-  description: Displays a button or a component that looks like a button.
 ---
 
 import { CredenzaBase } from '@/components/credenza/credenza-base.tsx'
-import { CredenzaWithState } from '@/components/credenza/credenza-with-state.tsx'
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { IoSend, IoArrowBack } from 'react-icons/io5';
 import { LuMoon } from 'react-icons/lu';
@@ -12,19 +10,20 @@ import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
 import { ComponentPreview } from '@/components/component-preview';
 import { TypeTable } from 'fumadocs-ui/components/type-table';
 
-## Credenza
+## 定义
 
-Displays a button or a component that looks like a button.
+`Dialog` 和 `Drawer` 组件的组合，默认当屏幕宽度大于 `768px` 时展示 `Dialog`，否则展示 `Drawer`。可以自定义断点值。
 
+## 组件示例
 
-## 基础用法 
+### 基础用法 
 
 <ComponentPreview filePathsKey="credenza_base">
-  <CredenzaBase />
+  <div className='flex justify-center items-center'>
+    <CredenzaBase />
+  </div>
 </ComponentPreview>
 
-## 带状态
+## API 参考文档
 
-<ComponentPreview filePathsKey="credenza_with_state">
-  <CredenzaWithState />
-</ComponentPreview>
+参考 [Dialog](/docs/dialog) 和 [Drawer](/docs/drawer) 的文档。

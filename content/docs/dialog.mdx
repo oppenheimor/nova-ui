@@ -17,9 +17,207 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
   
 弹窗的内容通常是不同控件进行组合布局。例如文本(可带格式，如缩进、链接、粗体等)、列表、输入框、网格、图标或图片。常用于选择或确认信息。
 
+## 组件示例
 
-## 基础用法 
+### 基础用法
 
 <ComponentPreview filePathsKey="dialog_base">
-  <DialogBase />
+  <div className='flex justify-center items-center'>
+    <DialogBase />
+  </div>
 </ComponentPreview>
+
+## API 参考文档
+
+### Root
+
+对话框根组件，控制全局功能。
+
+<TypeTable
+  type={{
+    defaultOpen: {
+      type: 'boolean',
+      description: '对话框在初始渲染时的打开状态。当你不需要控制其打开状态时使用。',
+      default: '',
+    },
+    open: {
+      type: 'boolean',
+      description: '对话框的受控打开状态。必须与 `onOpenChange` 一起使用。',
+      default: ''
+    },
+    onOpenChange: {
+      type: 'function',
+      description: '对话框的打开状态改变时调用的事件处理器。',
+      typeDescription: '(open: boolean) => void',
+      default: ''
+    },
+    modal: {
+      type: 'boolean',
+      description: '对话框的模态性。当设置为 `true` 时，外部元素的交互将被禁用，只有对话框内容对屏幕阅读器可见。',
+      default: 'true'
+    }
+  }}
+/>
+
+### Trigger
+
+打开对话框的触发器。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Portal
+
+当使用时，将你的遮罩和内容部分传送到 `body` 中。
+
+<TypeTable
+  type={{
+    forceMount: {
+      type: 'boolean',
+      description: '当需要更多控制时，用于强制挂载。使用 React 动画库控制动画时非常有用。如果在这里使用，它将被 `Dialog.Overlay` 和 `Dialog.Content` 继承。',
+      default: '',
+    },
+    container: {
+      type: 'HTMLElement',
+      description: '指定一个容器元素，将内容传送到其中。',
+      default: 'document.body'
+    }
+  }}
+/>
+
+### Overlay
+
+遮罩层。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: '',
+    },
+    forceMount: {
+      type: 'boolean',
+      description: '当需要更多控制时，用于强制挂载。使用 React 动画库控制动画时非常有用。它继承自 `Dialog.Portal`。',
+      default: ''
+    }
+  }}
+/>
+
+### Content
+
+包含所有在对话框中渲染的内容。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: '',
+    },
+    forceMount: {
+      type: 'boolean',
+      description: '当需要更多控制时，用于强制挂载。使用 React 动画库控制动画时非常有用。它继承自 `Dialog.Portal`。',
+      default: ''
+    },
+    onOpenAutoFocus: {
+      type: 'function',
+      description: '在组件打开后，焦点移入时触发的事件处理函数。通过调用 `event.preventDefault` 方法可以阻止默认行为。',
+      typeDescription: '(event: Event) => void',
+      default: ''
+    },
+    onCloseAutoFocus: {
+      type: 'function',
+      description: '在关闭对话框后，当焦点移动到触发器时调用的事件处理程序。可以通过调用 `event.preventDefault` 来阻止。',
+      typeDescription: '(event: Event) => void',
+      default: ''
+    },
+    onEscapeKeyDown: {
+      type: 'function',
+      description: '当按下 ESC 时调用的事件处理程序。可以通过调用 `event.preventDefault` 阻止。',
+      typeDescription: '(event: KeyboardEvent) => void',
+      default: ''
+    },
+    onPointerDownOutside: {
+      type: 'function',
+      description: '在组件边界之外发生指针事件时执行的事件处理函数。通过调用 `event.preventDefault` 方法可以阻止默认行为。',
+      typeDescription: '(event: PointerDownOutsideEvent) => void',
+      default: ''
+    },
+    onInteractOutside: {
+      type: 'function',
+      description: '当组件范围外发生交互（指针或焦点事件）时调用的事件处理程序。可以通过调用 `event.preventDefault` 阻止。',
+      typeDescription: '(event: React.FocusEvent | MouseEvent | TouchEvent) => void',
+      default: ''
+    },   
+  }}
+/>
+
+### Header
+
+对话框头部。
+
+<TypeTable
+  type={{
+    showCloseIcon: {
+      type: 'boolean',
+      description: '展示关闭按扭',
+      default: 'true',
+    },
+    onCloseIconClick: {
+      type: 'function',
+      description: '点击关闭按扭时触发',
+      typeDescription: '(event: React.MouseEvent) => void',
+      default: ''
+    }
+  }}
+/>
+
+### Close
+
+关闭对话框的按扭。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Title
+
+对话框标题。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>
+
+### Description
+
+对话框描述信息。
+
+<TypeTable
+  type={{
+    asChild: {
+      type: 'boolean',
+      description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
+      default: 'false',
+    }
+  }}
+/>

@@ -2,7 +2,6 @@
 
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   Dialog,
@@ -26,12 +25,13 @@ import {
 } from "@/components/ui/drawer"
 
 interface BaseProps {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 interface RootCredenzaProps extends BaseProps {
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  breakpointValue?: number
 }
 
 interface CredenzaProps extends BaseProps {
@@ -54,7 +54,9 @@ const useCredenzaContext = () => {
 };
 
 const Credenza = ({ children, ...props }: RootCredenzaProps) => {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const { breakpointValue = 768 } = props
+
+  const isDesktop = useMediaQuery(`(min-width: ${breakpointValue}px)`);
   const Credenza = isDesktop ? Dialog : Drawer;
 
   return (
@@ -83,9 +85,7 @@ const CredenzaClose = ({ className, children, ...props }: CredenzaProps) => {
   const CredenzaClose = isDesktop ? DialogClose : DrawerClose;
 
   return (
-    <CredenzaClose className={className} {...props}>
-      {children}
-    </CredenzaClose>
+    <CredenzaClose className={className} {...props} />
   );
 };
 
@@ -115,7 +115,10 @@ const CredenzaDescription = ({
   );
 };
 
-const CredenzaHeader = ({ className, children, ...props }: CredenzaProps) => {
+const CredenzaHeader = ({ className, children, ...props }: CredenzaProps & {
+  showCloseIcon?: boolean;
+  onCloseIconClick?: (event: React.MouseEvent) => void;
+}) => {
   const { isDesktop } = useCredenzaContext();
   const CredenzaHeader = isDesktop ? DialogHeader : DrawerHeader;
 
@@ -139,7 +142,7 @@ const CredenzaTitle = ({ className, children, ...props }: CredenzaProps) => {
 
 const CredenzaBody = ({ className, children, ...props }: CredenzaProps) => {
   return (
-    <div className={cn("px-4 md:px-0", className)} {...props}>
+    <div className={className} {...props}>
       {children}
     </div>
   );

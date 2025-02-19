@@ -1,48 +1,55 @@
-import * as React from 'react'
+'use client';
+
+import * as React from 'react';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from '@/components/ui/button'
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 export function DialogBase() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const openDialog = () => setIsOpen(true);
+
+  const closeDialog = () => setIsOpen(false);
+
+  const confirm = () => {
+    alert('You clicked confirm!');
+    closeDialog();
+  };
+
+  const cancel = () => {
+    alert('You clicked cancel!');
+    closeDialog();
+  };
+
   return (
-    <Dialog>
+    <Dialog open={isOpen}>
+      {/* Dialog 触发器 */}
       <DialogTrigger asChild>
-        <Button>Edit Profile</Button>
+        <Button onClick={openDialog}>Open Dialog</Button>
       </DialogTrigger>
+      {/* Dialog 主体 */}
       <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you{"'"}re done.
-          </DialogDescription>
+        {/* Dialog 头部 */}
+        <DialogHeader onCloseIconClick={closeDialog}>
+          {/* Dialog 标题 */}
+          <DialogTitle>Dialog Title</DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 gap-4 items-center">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 gap-4 items-center">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
+        <p>This is dialog content.</p>
+        {/* Dialog 底部 */}
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button variant="secondary" onClick={cancel}>
+            Cancel
+          </Button>
+          <Button onClick={confirm}>Confirm</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

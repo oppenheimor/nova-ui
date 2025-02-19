@@ -18,7 +18,6 @@ const filePaths = {
   drawer_base: 'drawer/drawer-base.tsx',
 
   credenza_base: 'credenza/credenza-base.tsx',
-  credenza_with_state: 'credenza/credenza-with-state.tsx',
 
   loader_text: 'loaders/text-loader.tsx',
 };
