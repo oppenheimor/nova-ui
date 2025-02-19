@@ -28,7 +28,7 @@ export function DrawerBase() {
   };
 
   return (
-    <Drawer open={isOpen}>
+    <Drawer open={isOpen} onOpenChange={setIsOpen}>
       {/* Drawer 触发器 */}
       <DrawerTrigger asChild>
         <Button onClick={openDrawer}>Open Drawer</Button>

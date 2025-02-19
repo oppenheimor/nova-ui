@@ -29,7 +29,7 @@ export function DialogBase() {
   };
 
   return (
-    <Dialog open={isOpen}>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       {/* Dialog 触发器 */}
       <DialogTrigger asChild>
         <Button onClick={openDialog}>Open Dialog</Button>
