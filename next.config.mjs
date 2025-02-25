@@ -8,6 +8,15 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   basePath: envConfig.SERVER.BASE_PATH,
+  async headers() {
+    return [{
+      source: '/:path*',
+      headers: [{
+        key: 'X-Forwarded-Prefix',
+        value: '/nova-ui'
+      }]
+    }]
+  },
   reactStrictMode: true,
   assetPrefix: envConfig.SERVER.BASE_ASSET_PREFIX
 };

@@ -1,0 +1,25 @@
+---
+  title: Tooltip
+---
+
+import { TooltipBase } from '@/components/tooltip/tooltip-base.tsx'
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { IoSend, IoArrowBack } from 'react-icons/io5';
+import { LuMoon } from 'react-icons/lu';
+import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
+import { ComponentPreview } from '@/components/component-preview';
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## 定义
+
+轻量级非模态信息提示组件，通过悬停/点击等交互触发后短暂浮现。与弹窗不同，提示框不会阻断用户操作界面，适合辅助性内容展示。常用于解释控件功能、表单校验提示或展示补充说明信息。
+
+提示框内容以简洁文本为主（支持基础格式如换行、颜色标记），可搭配小尺寸图标。应保持内容精炼，避免承载复杂交互控件，单次显示时长建议控制在 1-10 秒区间，确保及时出现又不干扰流程。
+
+## 基础用法 
+
+<ComponentPreview filePathsKey="tooltip_base">
+  <div className='flex justify-center items-center'>
+    <TooltipBase />
+  </div>
+</ComponentPreview>

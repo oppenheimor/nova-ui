@@ -1,6 +1,5 @@
 ---
   title: Dialog
-  description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 ---
 
 import { DialogBase } from '@/components/dialog/dialog-base.tsx'
@@ -122,6 +121,11 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
       description: '将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。',
       default: '',
     },
+    showOverlay: {
+      type: 'boolean',
+      description: '是否展示蒙层',
+      default: 'true'
+    },
     forceMount: {
       type: 'boolean',
       description: '当需要更多控制时，用于强制挂载。使用 React 动画库控制动画时非常有用。它继承自 `Dialog.Portal`。',
@@ -156,7 +160,7 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
       description: '当组件范围外发生交互（指针或焦点事件）时调用的事件处理程序。可以通过调用 `event.preventDefault` 阻止。',
       typeDescription: '(event: React.FocusEvent | MouseEvent | TouchEvent) => void',
       default: ''
-    },   
+    }
   }}
 />
 

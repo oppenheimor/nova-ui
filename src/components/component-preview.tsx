@@ -19,6 +19,12 @@ const filePaths = {
 
   credenza_base: 'credenza/credenza-base.tsx',
 
+  tooltip_base: 'tooltip/tooltip-base.tsx',
+
+  block_tabs_base: 'tabs/block-tabs-base.tsx',
+
+  text_tabs_base: 'tabs/text-tabs-base.tsx',
+
   loader_text: 'loaders/text-loader.tsx',
 };
 
