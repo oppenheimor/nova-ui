@@ -10,14 +10,12 @@ import {
 
 export function TooltipBase() {
   return (
-    <TooltipProvider>
+    <TooltipProvider disableHoverableContent>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="secondary">Hover</Button>
         </TooltipTrigger>
-        <TooltipContent>
-          <p>Add to library</p>
-        </TooltipContent>
+        <TooltipContent>Add to library</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

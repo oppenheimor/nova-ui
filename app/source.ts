@@ -20,6 +20,9 @@ export const pageTree: PageTree.Root = {
     { type: 'page', name: 'Setup', url: '/docs' },
     { type: 'page', name: 'Changelog', url: '/docs/changelog' },
 
+    { type:'separator', name: '基础规范' },
+    { type: 'page', name: '颜色', url: '/docs/color' },
+
     { type: 'separator', name: ' 按钮' },
     { type: 'page', name: 'Button', url: '/docs/button' },
 
@@ -34,6 +37,12 @@ export const pageTree: PageTree.Root = {
 
     { type: 'separator', name: '标签栏' },
     { type: 'page', name: 'BlockTabs', url: '/docs/block-tabs' },
-    { type: 'page', name: 'TextTabs', url: '/docs/text-tabs' }
+    { type: 'page', name: 'TextTabs', url: '/docs/text-tabs' },
+
+    // { type: 'separator', name: '表格' },
+    // { type: 'page', name: 'Table', url: '/docs/table' },
+
+    // { type: 'separator', name: '省略' },
+    // { type: 'page', name: 'Ellipsis', url: '/docs/ellipsis' }
   ],
 };

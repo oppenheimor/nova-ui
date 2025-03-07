@@ -26,7 +26,7 @@ const DialogClose = React.forwardRef<
     onClick={(event: React.MouseEvent) => onCloseIconClick?.(event)}
   >
     <>
-      <X className="w-4 h-4" />
+      <X className="w-5 h-5" />
       <span className="sr-only">Close</span>
     </>
   </DialogPrimitive.Close>
@@ -41,7 +41,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      'fixed inset-0 z-50 bg-background-mask-level2  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       className,
     )}
     {...props}

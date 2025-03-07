@@ -145,6 +145,10 @@ export default {
           up: 'var(--atom-color-price-up)',
           down: 'var(--atom-color-price-down)',
           even: 'var(--atom-color-price-even)',
+          crypto: {
+            up: 'var(--atom-color-price-crypto-up)',
+            down: 'var(--atom-color-price-crypto-down)',
+          }
         },
         status: {
           success: 'var(--atom-color-status-success)',
@@ -176,6 +180,10 @@ export default {
           },
           weak: 'var(--atom-color-background-weak)',
           nav: 'var(--atom-color-background-nav)',
+          list: {
+            hover1: 'var(--atom-color-background-list-hover)',
+            hover2: 'var(--atom-color-background-list-active-hover)',
+          }
         },
         foreground: {
           // TODO: DEFAULT 后面干掉
@@ -188,6 +196,7 @@ export default {
         divider: {
           level1: 'var(--atom-color-divider-level1)',
           level2: 'var(--atom-color-divider-level2)',
+          level3: 'var(--atom-color-divider-level3)',
         },
         border: {
           // TODO: DEFAULT 后面干掉
@@ -261,10 +270,15 @@ export default {
           divider: 'var(--atom-color-visualization-divider)',
           tooltip: 'var(--atom-color-visualization-tooltip)',
         },
-        interaction: {
-          hover: 'var(--atom-color-interaction-hover)',
-          click: 'var(--atom-color-interaction-click)',
+        hover: {
+          DEFAULT: 'var(--atom-color-hover)',
         },
+        click: {
+          DEFAULT: 'var(--atom-color-click)',
+        },
+        toast: {
+          background: 'var(--atom-color-toast-background)'
+        }
         // ============ atom-token colors end ============
       },
     },
