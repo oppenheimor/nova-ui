@@ -16,10 +16,130 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 提示框内容以简洁文本为主（支持基础格式如换行、颜色标记），可搭配小尺寸图标。应保持内容精炼，避免承载复杂交互控件，单次显示时长建议控制在 1-10 秒区间，确保及时出现又不干扰流程。
 
-## 基础用法 
+## 组件示例
+
+### 基础用法
 
 <ComponentPreview filePathsKey="tooltip_base">
   <div className='flex justify-center items-center'>
     <TooltipBase />
   </div>
 </ComponentPreview>
+
+## API 参考文档
+
+### Provider
+
+为你的提示框提供全局功能。
+
+<TypeTable
+  type={{
+    delayDuration: {
+      type: 'number',
+      description: '鼠标移入提示框触发器到提示框打开的持续时间。',
+      default: '700'
+    },
+    skipDelayDuration: {
+      type: 'number',
+      description: '用户在触发提示框后，必须等待的时间（以毫秒为单位），才能再次触发提示框而不产生延迟。此属性有助于提高用户体验，避免在快速交互时每次都需要经历提示框的延迟。',
+      default: '300'
+    },
+    disableHoverableContent: {
+      type: 'boolean',
+      description: `该属性用于防止提示框内容（Tooltip.Content）在用户悬停时保持打开状态。
+        当设置为 \`true\` 时，提示框内容在鼠标移开后会自动关闭。禁用此功能（设置为 \`false\`）可能
+        会对可访问性产生负面影响，因为某些用户可能希望在悬停时能够持续查看提示框内容。`,
+      default: ''
+    }
+  }}
+/>
+
+### Root
+
+包含提示框的所有部分
+
+<TypeTable
+  type={{
+    defaultOpen: {
+      type: 'boolean',
+      description: '提示框在初次渲染时的显示状态，适用于不需要手动控制提示框打开与否的情况。',
+      default: ''
+    },
+    open: {
+      type: 'boolean',
+      description: '提示框的受控打开状态。必须与 `onOpenChange` 一起使用。',
+      default: ''
+    },
+    onOpenChange: {
+      type: 'function',
+      description: '当提示框的打开状态发生变化时调用的事件处理器。',
+      typeDescription: '(open: boolean) => void',
+      default: ''
+    },
+    delayDuration: {
+      type: 'number',
+      description: '允许用户覆盖在 `Provider` 上设置的 `delayDuration`，以自定义特定提示框的打开延迟时间',
+      default: '700'
+    },
+    disableHoverableContent: {
+      type: 'boolean',
+      description: '防止 `Tooltip.Content` 在悬停时保持打开状态。禁用此功能会对可访问性产生影响。继承自 `Tooltip.Provider`。',
+      default: ''
+    }
+  }}
+/>
+
+### Trigger
+
+触发提示框的按钮。默认情况下，`Tooltip.Content` 会相对于触发器进行定位。
+
+### Portal
+
+当使用时，将内容部分传送到 `body` 中。
+
+<TypeTable
+  type={{
+    forceMount: {
+      type: 'boolean',
+      description: '该属性允许开发者在需要更精细的控制时强制挂载组件，特别是在使用动画时，这个属性可以确保动画效果的顺利执行，并且可以被 `Tooltip.Content` 继承',
+      default: ''
+    },
+    container: {
+      type: 'HTMLElement',
+      description: '指定内容被传送到的节点',
+      default: 'document.body'
+    }
+  }}
+/>
+
+### Content
+
+当提示框打开时弹出的组件。
+
+<TypeTable
+  type={{
+    onEscapeKeyDown: {
+      type: 'function',
+      description: '当按下 Escape 键时调用的事件处理器。可以通过调用 `event.preventDefault` 来阻止该事件。',
+      typeDescription: '(event: KeyboardEvent) => void',
+      default: ''
+    },
+    onPointerDownOutside: {
+      type: 'function',
+      description: '当指针事件发生在组件边界之外调用的事件处理器。可以通过调用 `event.preventDefault` 来阻止该事件。',
+      typeDescription: '(event: PointerDownOutsideEvent) => void',
+      default: ''
+    },
+    forceMount: {
+      type: 'boolean',
+      description: '该属性允许开发者在需要更精细的控制时强制挂载组件，特别是在使用动画时，这个属性可以确保动画效果的顺利执行。继承自 `Tooltip.Portal`。',
+      default: ''
+    },
+    side: {
+      type: 'enum',
+      description: '当提示框打开时，渲染相对于触发器的展示边。如果发生碰撞并且启用了 `avoidCollisions` 配置，则会反转。',
+      typeDescription: '"top" | "right" | "bottom" | "left"',
+      default: 'top'
+    },
+  }}
+/>

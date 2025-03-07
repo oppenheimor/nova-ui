@@ -245,6 +245,9 @@
     --atom-color-interaction-hover: rgba(0, 0, 0, 0.05);
     /* 交互反馈 - click */
     --atom-color-interaction-click: rgba(0, 0, 0, 0.1);
+
+    /* tooltip */
+    --atom-color-toast-background: #383838;
   }
 
   :root.dark, :root[theme-mode='dark'], :root[theme-mode="dark"], html.dark, html[theme-mode="black"], html[theme-mode="dark"] {

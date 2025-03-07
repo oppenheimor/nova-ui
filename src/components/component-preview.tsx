@@ -6,6 +6,8 @@ const filePaths = {
   Separator: 'separators/separator.tsx',
   input: 'inputs/input.tsx',
 
+  color_standard: 'color/color-standard.tsx',
+
   button_variants: 'button/button-variants.tsx',
   button_sizes: 'button/button-sizes.tsx',
   button_disabled: 'button/button-disabled.tsx',
@@ -24,6 +26,10 @@ const filePaths = {
   block_tabs_base: 'tabs/block-tabs-base.tsx',
 
   text_tabs_base: 'tabs/text-tabs-base.tsx',
+
+  table_demo: 'table/table-demo.tsx',
+
+  ellipsis_base: 'ellipsis/ellipsis-base.tsx',
 
   loader_text: 'loaders/text-loader.tsx',
 };
